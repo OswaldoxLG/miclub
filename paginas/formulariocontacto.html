@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"  href="./hoja/estilo.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo del proyecto" class="logo-img">
+            <h2 class="nom-proy">Mi Club</h2>
+        </div>
+        <nav> <!--Contenedor de enlaces para el menu de navegación-->
+            <!--Atajo: a.nav-link*3-->
+            <a href="./acnosotros.html" class="nav-link">Acerca de</a>
+            <a href="./Categorias.html" class="nav-link">Categorías</a>
+            <a href="./Iniciarsesion.html" class="nav-link">Iniciar sesión</a>
+            <a href="./Registrarse.html" class="nav-link">Registrarse</a>
+        </nav>
+        </header>
+
+    <section class="contenedor-fc">
+        <article class="formulario-contacto">
+            <h2>Formulario de Contacto</h2>
+            <form action="#" method="post">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+                </div>
+                <div class="campo">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Ingrese sus apellidos">
+                </div>
+                <div class="campo">
+                    <label for="correo">Correo electronico</label>
+                    <input type="email" id="correo" name="correo" placeholder="Ingrese su correo">
+                </div>
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje"></textarea>
+                </div>
+                <button type="submit">ENVIAR</button>
+            </form>
+        </article>
+        <aside class="informacion-contacto">
+            <figure class="ubicacion">
+                <img src="" alt="Icono de ubicación">
+            </figure>
+            <address>
+                <p><strong>Dirección:</strong></p>
+                <p>C. Benito Juárez 4-29, Villa Cuauhtemoc,<br>
+                52080 Villa Cuauhtémoc, Méx.</p>
+            </address>
+            <figure class="mapa">
+                <img src="" alt="Mapa">
+            </figure>
+            <section class="seccion-redsocial">
+                <p><strong>Redes Sociales:</strong></p>
+                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+            </section>
+        </aside>
+    </section>
+    <footer class="pie-de-pagina">
+        <div class="contenedor">
+            <section class="contenido-pie">
+                <div class="logo-pie">
+                    <img src="img/logo.png" alt="Logo del proyecto" class="imagen-logo">
+                    <h3 class="nombre-proyecto">Mi Club</h3>
+                </div>
+                <nav class="navegacion-pie">
+                    <div class="enlaces-pie">
+                        <h4>Clubes</h4>
+                        <ul>
+                            <li><a href="#">Artísticos</a></li>
+                            <li><a href="#">Deportivos</a></li>
+                            <li><a href="#">Culturales</a></li>
+                            <li><a href="#">Sociales</a></li>
+                        </ul>    
+                    </div>
+                    <div class="enlaces-pie">
+                        <h4>Acerca del sitio</h4>
+                        <ul>
+                            <li><a href="#">Acerca de nosotros</a></li>
+                            <li><a href="#">Contáctanos</a></li>
+                        </ul>   
+                    </div>
+                </nav>
+                <address class="contacto-pie">
+                    <h4>Contacto</h4>
+                    <p>Email: Conectics@gmail.com</p>
+                    <p>Dirección: Satos Degollado #108, col. El Jilguero,<br>Santa María Atarasquillo, Lerma, México</p>
+                </address>
+                <div class="redes-sociales">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </section>  
+        </div>
+    </footer>
+</body>
+</html>
