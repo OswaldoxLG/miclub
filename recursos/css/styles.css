@@ -1,4 +1,270 @@
 /*Header_logo*/
 .header_logo{
-    height: 70px;
+    height: 110px;
+    width: auto;
+}
+.letras_logo{
+    width: 200px; 
+    height: auto;
+}
+/*barrra de busqueda*/
+.busqueda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+}
+#barra-busqueda {
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 25px;
+    width:125px; 
+}
+#btn-busqueda {
+    align-items: center;
+    padding: 8px;
+    width: 150px;
+    border-radius: 25px;
+}
+
+/* categorias */
+
+.contenedor-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    gap: 20px;
+}
+
+.articulo {
+    display: flex;
+    width: 45%;
+    margin-bottom: 20px;
+    align-items: center;
+    border-radius: 20px;
+    padding: 1%;
+}
+
+.articulo img {
+    width: 20%;
+    margin-right: 20px;
+}
+
+.texto {
+    width: 75%;
+}
+
+.artistico {
+    background-color: #000;
+    color: #fff;
+}
+
+.deportivo {
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+
+}
+
+.social {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+
+}
+
+.cultural {
+    background-color: #000;
+    color: #fff;
+}
+.boton {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    padding: 10px 20px; 
+    background-color: #F5432B; 
+    color: white; 
+    text-decoration: none;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+.deportivo, .social {
+    border-radius: 20px;
+    border: 2px solid #ccc; /* Adjust the color as needed */
+  }
+.imagen.social{
+    border: none;
+}
+.imagen.deportivo{
+    border: none;
+}
+
+
+/*FormularioContacto*/
+
+
+.contenedor-fc{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    padding: 5px;
+}
+
+.formulario-contacto {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+}
+
+.formulario-contacto h2 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.campo input,
+.campo textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.campo input[type="text"],
+.campo input[type="email"] {
+    height: 40px;
+}
+
+.campo textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #f23d21;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d8351e;
+}
+
+.informacion-contacto {
+    width: 35%;
+    padding: 20px;
+}
+
+.informacion-contacto figure {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mapa img,
+.ubicacion img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px; /* Establece el máximo alto de la imagen en 50px */
+}
+.informacion-contacto address {
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+.informacion-contacto address p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.seccion-redsocial {
+    text-align: center;
+}
+
+.seccion-redsocial p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.seccion-redsocial a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 2rem;
+    color: #000;
+    text-decoration: none;
+}
+.seccion-redsocial a:hover {
+    color: #f23d21;
+}
+
+/*----Registrarse----*/
+
+.pag-registro{
+    padding: 70px 70px;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+}
+.contenedor-principal-registrarse{
+    background-color: whitesmoke;
+    padding: 20px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+}
+.logo-and-nom-regis{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo-img-pag-regis{
+    width: auto;
+    height: 350px;
+}
+#nom-proy-regis{
+    color: #d8351e;
+}
+.campo-regis {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.campo-regis label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.campo-regis input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+}
+.btn-regis{
+    max-width: 420px;;
 }
