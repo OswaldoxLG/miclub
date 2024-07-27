@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
 <link rel="stylesheet"  href="../recursos/css/bootstrap.min.css">
 <link rel="stylesheet"  href="../recursos/css/styles.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark header_all">
     <div class="container-fluid mx-2">
       <div class="d-flex align-items-center">
         <a href="#"><img src="../recursos/img/logo.png" alt="Logo del proyecto" class="header_logo me-2"></a>
@@ -47,8 +41,4 @@
     </div>
   </nav>
   <script src="../recursos/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
-
 

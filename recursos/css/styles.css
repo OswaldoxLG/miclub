@@ -7,6 +7,9 @@
     width: 200px; 
     height: auto;
 }
+.header_all{
+    margin-bottom: 20px;
+}
 /*barrra de busqueda*/
 .busqueda{
     display: flex;
@@ -28,13 +31,14 @@
 }
 
 /* categorias */
-
 .contenedor-categorias {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 .articulo {
     display: flex;
@@ -43,6 +47,7 @@
     align-items: center;
     border-radius: 20px;
     padding: 1%;
+    min-height: 200px; 
 }
 .articulo img {
     width: 20%;
@@ -71,7 +76,8 @@
     display: flex; 
     align-items: center;
     justify-content: center;
-    width: 70px;
+    width: 100px;
+    height: auto;
     padding: 10px 20px; 
     background-color: #F5432B; 
     color: white; 
@@ -87,8 +93,6 @@
 .imagen.social, .imagen.deportivo{
     border: none;
 }
-
-
 @media (max-width: 768px) {
     .articulo {
         width: 100%; /* Hacer que los artículos ocupen el 100% del ancho en resoluciones bajas */
