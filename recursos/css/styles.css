@@ -34,48 +34,35 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    width: 100%;
-    gap: 20px;
+    gap: 15px;
 }
-
 .articulo {
     display: flex;
     width: 45%;
-    margin-bottom: 20px;
+    gap: 15px;
     align-items: center;
     border-radius: 20px;
     padding: 1%;
 }
-
 .articulo img {
     width: 20%;
-    margin-right: 20px;
+    height: auto;
 }
-
 .texto {
     width: 75%;
 }
-
 .artistico {
     background-color: #000;
     color: #fff;
 }
-
 .deportivo {
     background-color: #fff;
     color: #000;
-    border-radius: 20px;
-
 }
-
 .social {
     background-color: white;
     color: black;
-    border-radius: 20px;
-
 }
-
 .cultural {
     background-color: #000;
     color: #fff;
@@ -95,27 +82,24 @@
 }
 .deportivo, .social {
     border-radius: 20px;
-    border: 2px solid #ccc; /* Adjust the color as needed */
-  }
-.imagen.social{
-    border: none;
+    border: 1px solid #ccc; 
 }
-.imagen.deportivo{
+.imagen.social, .imagen.deportivo{
     border: none;
 }
 
+
+@media (max-width: 768px) {
+    .articulo {
+        width: 100%; /* Hacer que los artículos ocupen el 100% del ancho en resoluciones bajas */
+    }
+}
 
 /*FormularioContacto*/
 
-
-.contenedor-fc{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    max-width: 1000px;
-    padding: 5px;
+.contenedor-categorias{
+    padding: 0;
 }
-
 .formulario-contacto {
     background-color: #fff;
     padding: 20px;
@@ -123,7 +107,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 60%;
 }
-
 .formulario-contacto h2 {
     font-size: 2rem;
     color: #000;
@@ -132,13 +115,11 @@
 .campo {
     margin-bottom: 15px;
 }
-
 .campo label {
     display: block;
     margin-bottom: 5px;
     font-size: 1rem;
 }
-
 .campo input,
 .campo textarea {
     width: calc(100% - 20px);
