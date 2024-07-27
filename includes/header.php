@@ -1,8 +1,7 @@
 <link rel="stylesheet"  href="../recursos/css/bootstrap.min.css">
 <link rel="stylesheet"  href="../recursos/css/styles.css">
-</head>
 <body>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark header_all">
+  <nav class="navbar navbar-expand-md bg-black navbar-dark header_all">
     <div class="container-fluid mx-2">
       <div class="d-flex align-items-center">
         <a href="#"><img src="../recursos/img/logo.png" alt="Logo del proyecto" class="header_logo me-2"></a>
@@ -17,10 +16,10 @@
             <a class="nav-link active" aria-current="page" href="#"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Nosotros</a>
+            <a class="nav-link text-white" href="#">Nosotros</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Categorías
             </a>
             <ul class="dropdown-menu">
@@ -31,10 +30,10 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Iniciar sesión</a>
+            <a class="nav-link text-white" href="#">Iniciar sesión</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Registrarse</a>
+            <a class="nav-link text-white" href="#">Registrarse</a>
           </li>
         </ul>
       </div>

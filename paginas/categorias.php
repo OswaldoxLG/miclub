@@ -42,5 +42,6 @@
             <a href="#" class="boton">Ver más</a> </div>
         </article>
       </section>
+      <?php include '../includes/footer.php'?>
 </body>
 </html>
