@@ -8,6 +8,7 @@
     <title>Categorías</title>
 </head>
 <?php include '../includes/header.php'?>
+<?php include '../includes/busqueda.php'?>
 <body>
     <section class="contenedor-categorias">
         <article class="articulo artistico">
