@@ -38,16 +38,20 @@
             </form>
         </article>
         <aside class="informacion-contacto">
+            <div class="ubicacion-direccion"> 
             <figure class="fc-ubicacion">
                 <img src="../recursos/img/ubicacion.png" alt="Icono de ubicación">
             </figure>
-            <address>
-                <p><strong>Dirección:</strong></p>
-                <p>C. Benito Juárez 4-29, Villa Cuauhtemoc,<br>
-                52080 Villa Cuauhtémoc, Méx.</p>
+            <p><strong>Dirección:</strong></p>
+            </div>
+            <address id="calle-dir">
+                <p>Satos Degollado #108, col. El Jilguero,<br>
+                Santa María Atarasquillo, Lerma, México</p>
             </address>
             <figure class="fc-mapa">
-                <img src="" alt="Mapa">
+            <a href="https://maps.app.goo.gl/riD4WNgYvUZXjgQQA" target="_blank">
+                <img src="../recursos/img/mapa.png" alt="Mapa">
+            </a>
             </figure>
             <section class="seccion-redsocial">
                 <p><strong>Redes Sociales</strong></p>

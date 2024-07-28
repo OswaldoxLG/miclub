@@ -174,7 +174,7 @@
     display: flex;
     padding: 0;
     max-width: 1200px;
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    margin: 0 auto; 
     margin-top: 30px;
 }
 
@@ -183,7 +183,19 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Distribuye el espacio equitativamente */
+    flex: 1; 
+}
+.informacion-contacto {
+    padding: 20px;
+    flex: 1; 
+}
+.ubicacion-direccion {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.fc-ubicacion{
+    margin-right: 8px;
 }
 
 .formulario-contacto h2 {
@@ -191,11 +203,12 @@
     color: #000;
     margin-bottom: 20px;
 }
-
+#calle-dir{
+    margin-left: 20px;
+}
 .fc-campo {
     margin-bottom: 15px;
 }
-
 .fc-campo label {
     display: block;
     margin-bottom: 5px;
@@ -235,22 +248,17 @@
 .fc-btn:hover {
     background-color: #d8351e;
 }
-
-.informacion-contacto {
-    padding: 20px;
-    flex: 1; /* Distribuye el espacio equitativamente */
-}
-
 .informacion-contacto figure {
     text-align: center;
     margin-bottom: 20px;
 }
-
-.fc-mapa img,
-.fc-ubicacion img {
-    max-width: 100%;
-    height: auto;
-    max-height: 50px; /* Establece el máximo alto de la imagen en 50px */
+.fc-ubicacion img{
+    height: 20px;
+    width: auto;
+}
+.fc-mapa img{
+    height: 350px;
+    width: 500px;
 }
 .informacion-contacto address {
     font-style: normal;
@@ -261,11 +269,11 @@
     line-height: 1.5;
 }
 .seccion-redsocial {
-    text-align: center;
+    text-align: start;
+    margin-left: 20px;
 }
 .seccion-redsocial p {
-    margin-bottom: 10px;
-    font-weight: bold;
+    margin-bottom: 0px;
 }
 .seccion-redsocial a {
     display: inline-block;
