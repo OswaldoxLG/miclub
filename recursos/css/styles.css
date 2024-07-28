@@ -170,49 +170,58 @@
 
 /*FormularioContacto*/
 
-.contenedor-categorias{
+.contenedor-fc {
+    display: flex;
     padding: 0;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    margin-top: 30px;
 }
+
 .formulario-contacto {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 60%;
+    flex: 1; /* Distribuye el espacio equitativamente */
 }
+
 .formulario-contacto h2 {
     font-size: 2rem;
     color: #000;
     margin-bottom: 20px;
 }
-.campo {
+
+.fc-campo {
     margin-bottom: 15px;
 }
-.campo label {
+
+.fc-campo label {
     display: block;
     margin-bottom: 5px;
     font-size: 1rem;
 }
-.campo input,
-.campo textarea {
-    width: calc(100% - 20px);
+
+.fc-campo input,
+.fc-campo textarea {
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    box-sizing: border-box;
 }
 
-.campo input[type="text"],
-.campo input[type="email"] {
+.fc-campo input {
     height: 40px;
 }
 
-.campo textarea {
+.fc-campo textarea {
     height: 100px;
     resize: none;
 }
 
-button {
+.fc-btn {
     width: 100%;
     padding: 15px;
     background-color: #f23d21;
@@ -223,13 +232,13 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.fc-btn:hover {
     background-color: #d8351e;
 }
 
 .informacion-contacto {
-    width: 35%;
     padding: 20px;
+    flex: 1; /* Distribuye el espacio equitativamente */
 }
 
 .informacion-contacto figure {
@@ -237,8 +246,8 @@ button:hover {
     margin-bottom: 20px;
 }
 
-.mapa img,
-.ubicacion img {
+.fc-mapa img,
+.fc-ubicacion img {
     max-width: 100%;
     height: auto;
     max-height: 50px; /* Establece el máximo alto de la imagen en 50px */
@@ -247,31 +256,22 @@ button:hover {
     font-style: normal;
     margin-bottom: 20px;
 }
-
 .informacion-contacto address p {
     margin: 0;
     line-height: 1.5;
 }
-
 .seccion-redsocial {
     text-align: center;
 }
-
 .seccion-redsocial p {
     margin-bottom: 10px;
     font-weight: bold;
 }
-
 .seccion-redsocial a {
     display: inline-block;
-    margin: 0 10px;
     font-size: 2rem;
-    color: #000;
-    text-decoration: none;
 }
-.seccion-redsocial a:hover {
-    color: #f23d21;
-}
+
 
 /*----Registrarse----*/
 

@@ -44,5 +44,6 @@
         </article>
       </section>
       <?php include '../includes/footer.php'?>
+      <script src="../recursos/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
