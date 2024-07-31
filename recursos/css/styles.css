@@ -198,7 +198,6 @@
 }
 
 .formulario-contacto h2 {
-    font-size: 2rem;
     color: #000;
     margin-bottom: 20px;
 }
@@ -223,30 +222,14 @@
     font-size: 1rem;
     box-sizing: border-box;
 }
-
 .fc-campo input {
     height: 40px;
 }
-
 .fc-campo textarea {
-    height: 100px;
+    height: 500px;
     resize: none;
 }
 
-.fc-btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #f23d21;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.fc-btn:hover {
-    background-color: #d8351e;
-}
 .informacion-contacto figure {
     text-align: center;
     margin-bottom: 20px;
@@ -256,8 +239,8 @@
     width: auto;
 }
 .fc-mapa img{
-    height: 350px;
-    width: 500px;
+    max-width: 100%;
+    height: auto;
 }
 .informacion-contacto address {
     font-style: normal;
@@ -277,6 +260,20 @@
 .seccion-redsocial a {
     display: inline-block;
     font-size: 2rem;
+}
+@media (max-width: 768px) {
+    .formulario-contacto, .informacion-contacto {
+        padding: 10px;
+    }
+    .ubicacion-direccion {
+        margin-left: 10px;
+    }
+    #calle-dir {
+        margin-left: 10px;
+    }
+    .seccion-redsocial {
+        margin-left: 10px;
+    }
 }
 
 

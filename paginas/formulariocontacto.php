@@ -36,7 +36,9 @@
                         <label for="mensaje">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje" class="form-control"></textarea>
                     </div>
-                    <button type="submit" class="fc-btn btn btn-primary">ENVIAR</button>
+                    <div>
+                    <button type="submit" class="btn btn-danger w-100">ENVIAR</button>    
+                    </div>               
                 </form>
             </article>
         </div>
@@ -54,7 +56,7 @@
                 </address>
                 <figure class="fc-mapa mb-3">
                     <a href="https://maps.app.goo.gl/riD4WNgYvUZXjgQQA" target="_blank">
-                        <img src="../recursos/img/mapa.png" alt="Mapa">
+                        <img src="../recursos/img/mapa.png" alt="Mapa" class="img-fluid">
                     </a>
                 </figure>
                 <section class="seccion-redsocial">
