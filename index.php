@@ -6,46 +6,58 @@
     <link rel="stylesheet"  href="http://localhost/miclub_site/miclub/recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://localhost/miclub_site/miclub/recursos/css/styles.css">
     <title>Mi Club</title>
-</head>
-<body>
 <?php include './includes/header.php'?>
 <?php include './includes/busqueda.php'?>
+<?php include './includes/slider.php'?>
+</head>
+<body>
 <div class="container">
-  <div id="carouselExampleIndicators" class="carousel slide mx-auto" style="max-width: 880px; height: 370px;">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner" style="height: 100%;">
-      <div class="carousel-item active">
-        <img src="./recursos/img/slider1.jpg" class="d-block w-100" style="height: 100%; object-fit: cover;" alt="slider 1">
-        <div class="carousel-caption d-md-block top-0 mt-5">
-          <p class="fs-4 fs-md-3 fs-sm-2">Bienvenido a</p>
-          <h1 class="display-4 display-md-1 fw-bolder text-capitalize">Mi Club</h1>
+  <div class="row miclub_p3">
+    <div class="col-12 col-sm-4 miclub_indice_box">
+      <div class="row">
+        <div class="col-l-4 col-sm-1 col-md-6  miclub-main-img">
+          <img src="./recursos/img/social.png" alt="social" class="img-fluid">
+        </div>
+        <div class="col-l-8 col-sm-1 col-md-6 d-flex justify-content-center align-items-center">
+          <p class="text-center miclub_indice_p3">Comienza a construir relaciones significativas mientras aprendes nuevas habilidades.</p>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="./recursos/img/slider2.jpg" class="d-block w-100" style="height: 100%; object-fit: cover;" alt="slider 2">
-      </div>
-      <div class="carousel-item">
-        <img src="./recursos/img/slider3.jpg" class="d-block w-100" style="height: 100%; object-fit: cover;" alt="slider 3">
+    </div>
+
+    <div class="col-12 col-sm-4 miclub_indice_box">
+      <div class="row">
+        <div class="col-l-4 col-sm-1 col-md-6 miclub-main-img">
+          <img src="./recursos/img/art.png" alt="arte" class="img-fluid">
+        </div>
+        <div class="col-l-8 col-sm-1 col-md-6 d-flex justify-content-center align-items-center">
+          <p class="text-center miclub_indice_p3">Explora nuestras categorías y encuentra tu pasión.</p>
+        </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+
+    <div class="col-12 col-sm-4 miclub_indice_box">
+      <div class="row">
+        <div class="col-l-4 col-sm-1 col-md-6 miclub-main-img">
+          <img src="./recursos/img/shake.png" alt="saludo" class="img-fluid">
+        </div>
+        <div class="col-l-8 col-sm-1 col-md-6 d-flex justify-content-center align-items-center">
+          <p class="text-center miclub_indice_p3">Descubre una comunidad llena de oportunidades para aprender, crecer y conectar.</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-
-    <?php include './includes/footer.php'?>
-    <script src="http://localhost/miclub_site/miclub/recursos/js/bootstrap.bundle.min.js"></script>
-    <script src="http://localhost/miclub_site/miclub/recursos/js/jquery-3.6.0.min.js>  </script>
+  <div class="row mx-auto miclub_con_clic">
+                        <div class="col-12 miclub_con_sec_in">
+                            <div class="miclub_consec_text">
+                            <h2>¿Buscas explorar nuevas aficiones, conocer gente y pasar un buen rato?</h2>
+                            <a href="paginas/categorias.php"><button id="miclub_btn_index">ÚNETE A UN CLUB</button></a>
+                            </div>
+                        </div>
+                    </div>
+  </div>    
+</div>        
+<?php include './includes/footer.php'?>
+<script src="http://localhost/miclub_site/miclub/recursos/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@
                         <h4 class="footer_text_main">Acerca del sitio</h4>
                         <ul>
                             <li><a href="#">Acerca de nosotros</a></li>
-                            <li><a href="#">Contáctanos</a></li>
+                            <li><a href="/miclub/paginas/contact.php">Contáctanos</a></li>
                         </ul>   
                     </div>
                 </nav>
@@ -39,3 +39,4 @@
                     <p>© 2024 Mi Club. Todos los derechos reservados.</p>
                 </div>
     </footer>
+    <script src="http://localhost/miclub_site/miclub/recursos/js/bootstrap.bundle.min.js"></script>

@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../recursos/css/styles.css">
+    <link rel="stylesheet"  href="http://localhost/miclub_site/miclub/recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost/miclub_site/miclub/recursos/css/styles.css">
     <title>Categorías</title>
+    <?php include 'C:/xampp/htdocs/miclub_site/miclub/includes/header.php'?>
+<?php include 'C:/xampp/htdocs/miclub_site/miclub/includes/busqueda.php'?>
 </head>
-<?php include '../includes/header.php'?>
-<?php include '../includes/busqueda.php'?>
 <body>
     <section class="contenedor-categorias">
         <article class="articulo artistico">
@@ -42,7 +43,7 @@
             <a href="#" class="boton">Ver más</a> </div>
         </article>
       </section>
-      <?php include '../includes/footer.php'?>
-      <script src="../recursos/js/bootstrap.bundle.min.js"></script>
+      <?php include 'C:/xampp/htdocs/miclub_site/miclub/includes/footer.php'?>
+      <script src="http://localhost/miclub_site/miclub/recursos/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="../recursos/css/bootstrap.min.css">
     <link rel="stylesheet"  href="../recursos/css/styles.css">
+    <link rel="stylesheet"  href="http://localhost/miclub_site/miclub/recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost/miclub_site/miclub/recursos/css/styles.css">
     <title>Contacto</title>
+    <?php include 'C:/xampp/htdocs/miclub_site/miclub/includes/header.php'?>
+<?php include 'C:/xampp/htdocs/miclub_site/miclub/includes/busqueda.php'?>
 </head>
 <body>
-    <?php include '../includes/header.php'?>
-    <?php include '../includes/busqueda.php'?>
     <div class="contenedor-fc container mt-4">
     <div class="row">
         <div class="col-lg-6">
@@ -68,8 +70,7 @@
         </div>
     </div>
 </div>
-
-    <?php include '../includes/footer.php'?>
-    <script src="../recursos/js/bootstrap.bundle.min.js"></script>
+<?php include 'C:/xampp/htdocs/miclub_site/miclub/includes/footer.php'?>
+    <script src="http://localhost/miclub_site/miclub/recursos/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
