@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="../recursos/css/bootstrap.min.css">
-    <link rel="stylesheet"  href="../recursos/css/styles.css">
-    <link rel="stylesheet"  href="http://localhost/miclub_site/miclub/recursos/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://localhost/miclub_site/miclub/recursos/css/styles.css">
+    <link rel="stylesheet"  href="/miclub_site/miclub/recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/miclub_site/miclub/recursos/css/styles.css">
     <title>Contacto</title>
-    <?php include 'C:/xampp/htdocs/miclub_site/miclub/includes/header.php'?>
-<?php include 'C:/xampp/htdocs/miclub_site/miclub/includes/busqueda.php'?>
+    <?php include '/miclub_site/miclub/includes/header.php'?>
+<?php include '/miclub_site/miclub/includes/busqueda.php'?>
 </head>
 <body>
     <div class="contenedor-fc container mt-4">
@@ -70,7 +68,7 @@
         </div>
     </div>
 </div>
-<?php include 'C:/xampp/htdocs/miclub_site/miclub/includes/footer.php'?>
-    <script src="http://localhost/miclub_site/miclub/recursos/js/bootstrap.bundle.min.js"></script>
+<?php include '/miclub_site/miclub/includes/footer.php'?>
+    <script src="/miclub_site/miclub/recursos/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

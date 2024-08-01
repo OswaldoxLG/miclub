@@ -19,7 +19,7 @@
                         <h4 class="footer_text_main">Acerca del sitio</h4>
                         <ul>
                             <li><a href="#">Acerca de nosotros</a></li>
-                            <li><a href="/miclub/paginas/contact.php">Contáctanos</a></li>
+                            <li><a href="/miclub_site/miclub/paginas/contact.php">Contáctanos</a></li>
                         </ul>   
                     </div>
                 </nav>
