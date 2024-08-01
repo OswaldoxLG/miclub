@@ -55,7 +55,8 @@
                             </div>
                         </div>
                     </div>
-  </div>    
+  </div> 
+  <p>ho</p>  
 </div>        
 <?php include '/miclub_site/miclub/includes/footer.php'?>
 <script src="/miclub_site/miclub/recursos/js/bootstrap.bundle.min.js"></script>
