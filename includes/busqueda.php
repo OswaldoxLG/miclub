@@ -1,5 +1,5 @@
-<link rel="stylesheet"  href="http://localhost/miclub_site/miclub/recursos/css/styles.css">
-<link rel="stylesheet"  href="http://localhost/miclub_site/miclub/recursos/css/bootstrap.min.css">
+<link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 
     <nav class="navbar bg-transparent contenedor_barra">
         <div class="container d-flex justify-content-center w-75">

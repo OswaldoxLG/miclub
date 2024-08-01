@@ -1,4 +1,4 @@
-<link rel="stylesheet"  href="http://localhost/miclub_site/miclub/recursos/css/bootstrap.min.css">
+<link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
 
 <div id="carouselExampleIndicators" class="carousel slide mx-auto" style="max-width: 880px; height: 370px; margin-bottom:30px;">
     <div class="carousel-indicators">
@@ -31,4 +31,4 @@
     </button>
   </div>
 
-  <script src="http://localhost/miclub_site/miclub/recursos/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo BASE_URL; ?>js/bootstrap.bundle.min.js"></script>

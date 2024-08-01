@@ -1,9 +1,9 @@
-<link rel="stylesheet"  href="http://localhost/miclub_site/miclub/recursos/css/styles.css">
-<link rel="stylesheet"  href="http://localhost/miclub_site/miclub/recursos/css/bootstrap.min.css">
+<link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
     <footer class="pie-de-pagina bg-black">
                 <div class="logo-pie"> 
-                    <img src="http://localhost/miclub_site/miclub/recursos/img/logo.png" alt="Logo del proyecto" class="footer_img_logo">
-                    <img src="http://localhost/miclub_site/miclub/recursos/img/letras.png" alt="nombre del proyecto" class="footer_letras_logo">
+                    <img src="../miclub/recursos/img/logo.png" alt="Logo del proyecto" class="footer_img_logo">
+                    <img src="../miclub/recursos/img/letras.png" alt="nombre del proyecto" class="footer_letras_logo">
                 </div>
                 <nav class="navegacion-pie">
                     <div class="enlaces-pie">
@@ -39,4 +39,4 @@
                     <p>© 2024 Mi Club. Todos los derechos reservados.</p>
                 </div>
     </footer>
-    <script src="http://localhost/miclub_site/miclub/recursos/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo BASE_URL; ?>js/bootstrap.bundle.min.js"></script>
