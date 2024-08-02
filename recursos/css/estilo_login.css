@@ -1,0 +1,55 @@
+.background{
+    background-color: red;
+}
+.contenedor_blanco{
+    background-color: rgba(255,255,255,0.8);
+    height: 525px;
+    width: 1000px;
+    border-radius: 30px;
+    margin: 4% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    height: 250px;
+}
+.barra_negra{
+    display: flex;
+    height: 250px;
+    width: 1px;
+    background-color: black;
+}
+.titulo{
+    font-family:Verdana;
+    margin-bottom: 10px;
+}
+.texto{
+    font-family:arial;
+    margin: 0;
+    font-size: 25px;
+    font-weight: lighter;
+}
+input{
+    font-size: 25px;
+    background-color:rgba(80,80,80,0.3);
+    border: none;
+}
+.enviar{
+    font-size: 25px;
+    color:white;
+    background-color: blue;
+    border:none;
+    width: 320px;
+}
+.formulario{
+    margin-left: 20px;
+}
+.letras_logo{
+    height:30px;
+    margin-left: 35px;
+    margin-top:5px;
+}
+.logos{
+    display:grid;
+}

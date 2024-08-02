@@ -1,0 +1,9 @@
+.conetics{
+    height: 300px;
+
+}
+.logos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
