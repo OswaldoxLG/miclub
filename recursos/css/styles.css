@@ -329,7 +329,6 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
 }
 .btn-regis{
     font-size: 25px;
@@ -363,7 +362,7 @@
     align-items: center;
     border-radius: 80px;
     padding: 5px;
-    overflow: hidden; /* Asegúrate de que el pseudo-elemento no se desborde */
+    overflow: hidden; 
 }
 
 .miclub_con_clic::before {
@@ -406,6 +405,8 @@
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
+/*cursos deportes*/
 .centrar_cursos{
     background-color: grey;
     margin-left: 175px;
