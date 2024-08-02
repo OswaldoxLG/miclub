@@ -647,3 +647,390 @@ a img.icono {
     cursor: pointer;
     width: 100%;
 }
+
+/*----admin categorias index---*/
+
+.con-prin-admincat {
+    display: flex;
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.con-verde-admincat {
+    display: flex;
+    width: 90px;
+    height: 10px;
+    background-color: #4CAF50; 
+    padding: 15px;
+    margin: 5px;
+}
+
+.btn-añadir-admincat {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+}
+
+.btn-añadir-admincat img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-añadir-admincat p {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+}
+.aside-admincat {
+    width: 20%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+.imagen-lateral {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.aside-admincat h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #F5432B;
+}
+
+.nav-admincat ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-admincat ul li {
+    margin-bottom: 10px;
+}
+
+.nav-admincat ul li a {
+    text-decoration: none;
+    color: #1F91BD;
+    font-size: 16px;
+}
+
+.nav-admincat ul li a:hover {
+    text-decoration: underline;
+}
+.main-admincat {
+    flex-grow: 1; 
+    padding: 20px;
+}
+
+.main-admincat h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+.table-admincat {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: #E0F7FA;
+}
+
+.thead-admincat {
+    background-color: black;
+}
+
+.tr-admincat th, .tr-admincat td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.thead-admincat th {
+    background-color: #1F91BD;
+    font-size: 16px;
+    color: #333;
+}
+
+.tbody-admincat .tr-admincat td {
+    background-color: #ffffff;
+}
+.icono {
+    width: 24px;
+    height: 24px;
+}
+a img.icono {
+    vertical-align: middle;
+}
+
+/*----admin instructores index---*/
+
+.con-prin-admininstruct {
+    display: flex;
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.con-verde-admininstruct {
+    display: flex;
+    width: 90px;
+    height: 10px;
+    background-color: #4CAF50; 
+    padding: 15px;
+    margin: 5px;
+}
+
+.btn-añadir-admininstruct {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 18px;
+}
+
+.btn-añadir-admininstruct img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-añadir-admininstruct p {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+}
+.aside-admininstruct {
+    width: 20%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+.imagen-lateral {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.aside-admininstruct h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #F5432B;
+}
+
+.nav-admininstruct ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-admininstruct ul li {
+    margin-bottom: 10px;
+}
+
+.nav-admininstruct ul li a {
+    text-decoration: none;
+    color: #1F91BD;
+    font-size: 16px;
+}
+
+.nav-admininstruct ul li a:hover {
+    text-decoration: underline;
+}
+.main-admininstruct {
+    flex-grow: 1; 
+    padding: 20px;
+}
+
+.main-admininstruct h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.table-admininstruct {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: #E0F7FA;
+}
+
+.thead-admininstruct {
+    background-color: black;
+}
+
+.tr-admininstruct th, .tr-admininstruct td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.thead-admininstruct th {
+    background-color: #1F91BD;
+    font-size: 16px;
+    color: #333;
+}
+
+.tbody-admininstruct .tr-admininstruct td {
+    background-color: #ffffff;
+}
+
+.icono {
+    width: 24px;
+    height: 24px;
+}
+
+a img.icono {
+    vertical-align: middle;
+}
+
+/*---categorias create--*/
+
+body.con-body-form-admincat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.con-prin-form-admincat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    gap:25px;
+    width: 550px;
+}
+
+.con-form-img-admincat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.con-form-img-admincat img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.h2-form-admincat {
+    text-align: center;
+    color: #d8351e;
+    font-size: xx-large;
+}
+
+.con-form-admincat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    gap: 20px;
+}
+
+#h1-form-admincat {
+    margin-bottom: 20px;
+}
+
+.label-form-admincat {
+    margin-bottom: 5px;
+}
+
+.input-form-cat {
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 350px;
+}
+
+.boton-agregar-admincat {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #d8351e;
+    width: 364px;
+    color: white;
+}
+
+/*--instructor create--*/
+.con-body-form-admininstruct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.con-prin-form-admininstruct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    width: 400px;
+    height: auto;
+}
+
+.con-form-img-admininstruct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.con-form-img-admininstruct img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.h2-form-admininstruct {
+    text-align: center;
+    color: #d8351e;
+    font-size: xx-large;
+}
+.con-form-admininstruct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+#h1-form-admininstruct {
+    margin-bottom: 20px;
+}
+.label-form-admininstruct {
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+.input-form-admininstruct {  
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.boton-agregar-admininstruct{
+    padding: 10px 20px;
+    background-color: #d8351e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
