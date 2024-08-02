@@ -2,8 +2,11 @@
     height: 300px;
 
 }
-.logos{
+.logo_nosotros{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.somos_txt{
+    text-align:justify;
 }

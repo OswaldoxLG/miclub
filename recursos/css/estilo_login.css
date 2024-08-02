@@ -1,5 +1,7 @@
 .background{
-    background-color: red;
+    padding: 70px 70px;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
 }
 .contenedor_blanco{
     background-color: rgba(255,255,255,0.8);
@@ -35,21 +37,29 @@ input{
     background-color:rgba(80,80,80,0.3);
     border: none;
 }
-.enviar{
+.btn_login{
     font-size: 25px;
     color:white;
-    background-color: blue;
+    background-color: #F5432B;
     border:none;
-    width: 320px;
+    width: 100%;
 }
-.formulario{
+.form_login{
     margin-left: 20px;
 }
-.letras_logo{
+.letras_logo_login{
     height:30px;
     margin-left: 35px;
     margin-top:5px;
+    width: 200px; 
+    height: auto;
 }
-.logos{
+.logos_login{
     display:grid;
+}
+
+.txt_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

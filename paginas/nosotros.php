@@ -18,14 +18,14 @@ include_once BASE_PATH . 'includes/header.php';
 ?>
 <div class="container">
     <h1>Conoce más acerca de nosotros</h1>
-    <p>"Conetics" es una empresa dedicada a brindar el servicio de creación,
+    <p class="somos_txt">"Conetics" es una empresa dedicada a brindar el servicio de creación,
 diseño, desarrollo y mantenimiento de páginas web. Estamos seriamente comprometidos
 con nuestros clientes y nuestros propios proyectos para brindar un servicio de calidad
 y de esta manera hacer que las proyectos logren tener un buen alcance en el mercado, 
 manteniéndose a la vanguardia con tecnologías actualizadas implementadas para la creación 
 de sitios web.</p>
 </div>
-<div class="logos">
+<div class="logo_nosotros">
 <img src="<?php echo BASE_URL; ?>recursos/img/conetics.png" class="conetics">
 </div>
 <?php
