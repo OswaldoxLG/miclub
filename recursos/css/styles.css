@@ -447,3 +447,203 @@
     justify-content: center;
     align-items: center;
 }
+
+/*----admin alumnos index---*/
+
+/* Contenedor principal */
+.con-prin-adminalu {
+    display: flex;
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.con-verde-adminalu {
+    display: flex;
+    background-color: #4CAF50; 
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.btn-añadir-adminalu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 18px;
+}
+
+.btn-añadir-adminalu img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-añadir-adminalu p {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+}
+
+.aside-adminalu {
+    width: 20%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+.imagen-lateral {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.aside-adminalu h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #F5432B;
+}
+
+.nav-adminalu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-adminalu ul li {
+    margin-bottom: 10px;
+}
+
+.nav-adminalu ul li a {
+    text-decoration: none;
+    color: #1F91BD;
+    font-size: 16px;
+}
+
+.nav-adminalu ul li a:hover {
+    text-decoration: underline;
+}
+
+.main-adminalu {
+    flex-grow: 1; 
+    padding: 20px;
+}
+
+.main-adminalu h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.table-adminalu {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: #E0F7FA;
+}
+
+.thead-adminalu {
+    background-color: black;
+}
+
+.tr-adminalu th, .tr-adminalu td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.thead-adminalu th {
+    background-color: #1F91BD;
+    font-size: 16px;
+    color: #333;
+}
+
+.tbody-adminalu .tr-adminalu td {
+    background-color: #ffffff;
+}
+
+.icono {
+    width: 24px;
+    height: 24px;
+}
+
+a img.icono {
+    vertical-align: middle;
+}
+
+/*----alumnos create-------*/
+
+.con-body-form-adminalu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.con-prin-form-adminalu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    width: 400px;
+}
+
+.con-form-img-adminalu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.con-form-img-adminalu img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.h2-form-adminalu {
+    text-align: center;
+    color: #d8351e;
+    font-size: xx-large;
+}
+
+.con-form-adminalu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#h1-form-adminalu {
+    margin-bottom: 20px;
+}
+
+.label-form-adminalu {
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
+.input-form-alu {
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.boton-agregar-adminalu {
+    color: white;
+    background-color: #d8351e;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
