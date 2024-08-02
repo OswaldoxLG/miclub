@@ -19,7 +19,7 @@
                         <h4 class="footer_text_main">Acerca del sitio</h4>
                         <ul>
                             <li><a href="#">Acerca de nosotros</a></li>
-                            <li><a href="/miclub_site/miclub/paginas/contact.php">Contáctanos</a></li>
+                            <li><a href="<?php echo BASE_URL; ?>paginas/contact.php">Contáctanos</a></li>
                         </ul>   
                     </div>
                 </nav>
@@ -31,8 +31,8 @@
                 <div class="footer-red">
                     <h4 class="footer_text_main">Redes Sociales</h4>
                     <div class="footer_red_iconos">
-                        <a href="#" class="footer-facebook"><img src="http://localhost/miclub_site/miclub/recursos/img/facebook.png" class="img-face" alt="Facebook"></a>
-                        <a href="#" class="footer-instagram"><img src="http://localhost/miclub_site/miclub/recursos/img/instagram.png" class="img-insta" alt="Instagram"></a>
+                        <a href="#" class="footer-facebook"><img src="<?php echo BASE_URL; ?>recursos/img/facebook.png" class="img-face" alt="Facebook"></a>
+                        <a href="#" class="footer-instagram"><img src="<?php echo BASE_URL; ?>recursos/img/instagram.png" class="img-insta" alt="Instagram"></a>
                     </div>
                 </div>
                 <div class="footer_derechos">

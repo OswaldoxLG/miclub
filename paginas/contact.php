@@ -1,3 +1,6 @@
+<?php
+include_once '../config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +9,6 @@
     <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
     <title>Contacto</title>
-    <?php
-    include_once 'config.php';
-?>
 </head>
 <body>
 <?php
