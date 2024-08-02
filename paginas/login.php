@@ -10,8 +10,7 @@ include_once '../config.php';
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/estilo_login.css">
 </head>
-<body>
-<div class="login_background">
+<body class="login_background">
     <div class="contenedor_blanco_login">
         <div class="columna_izquierda"> 
                     <img src="<?php echo BASE_URL; ?>recursos/img/logo.png" class="logo_login">
@@ -42,7 +41,5 @@ include_once '../config.php';
             </div> 
         </div>
     </div>
-</div>
-
 </body>
 </html>

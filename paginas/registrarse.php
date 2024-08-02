@@ -10,8 +10,7 @@ include_once '../config.php';
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
     <title>Registrarse</title>
 </head>
-<body>
-    <div class="pag-registro">
+<body class="background_registro">
         <main class="contenedor-principal-registrarse">
             <div class="logo-and-nom-regis">
                 <img src="../recursos/img/logo.png" alt="logo" class="logo-img-pag-regis">
@@ -49,7 +48,5 @@ include_once '../config.php';
                 </form>
             </section>
         </main>
-    </div>
-
 </body>
 </html>
