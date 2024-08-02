@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
     <footer class="pie-de-pagina bg-black">
                 <div class="logo-pie"> 
-                    <img src="../miclub/recursos/img/logo.png" alt="Logo del proyecto" class="footer_img_logo">
-                    <img src="../miclub/recursos/img/letras.png" alt="nombre del proyecto" class="footer_letras_logo">
+                    <img src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="Logo del proyecto" class="footer_img_logo">
+                    <img src="<?php echo BASE_URL; ?>recursos/img/letras.png" alt="nombre del proyecto" class="footer_letras_logo">
                 </div>
                 <nav class="navegacion-pie">
                     <div class="enlaces-pie">

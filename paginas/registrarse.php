@@ -1,8 +1,13 @@
+<?php
+include_once '../config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
     <title>Registrarse</title>
 </head>
 <body>
@@ -10,11 +15,11 @@
         <main class="contenedor-principal-registrarse">
             <div class="logo-and-nom-regis">
                 <img src="../recursos/img/logo.png" alt="logo" class="logo-img-pag-regis">
-                <h2 id="nom-proy-regis">My Club</h2>
+                <img src="<?php echo BASE_URL; ?>recursos/img/letras.png" class="lts_regis">
             </div>
             <section class="form-regis">
                 <div class="titulo-regis">
-                <h1>Registrate</h1> 
+                <h1>REGISTRATE</h1> 
                 </div>
                 <div class="form-contenedor-regis">
                 <form action="registrophp.php" method="POST">
@@ -32,14 +37,14 @@
                     </div>
                     <div class="campo-regis">
                         <label for="correo">Correo electronico</label>
-                        <input type="email" id="correo" name="correo" placeholder="Ingrese su correo">
+                        <input type="email" id="email" name="email" placeholder="Ingrese su correo">
                     </div>
                     <div class="campo-regis">
-                        <label for="mensaje">contraseña</label>
-                        <input type="contraseña" id="contraseña" name="contraseña" placeholder="Contraseña">
+                        <label for="password">contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="Contraseña">
                     </div>
-                    <div class="btn-regis">
-                    <button type="submit">Registrarse</button>
+                    <div class="btn-regis-con">
+                    <button type="submit" class="btn-regis">REGISTRARSE</button>
                     </div>
                 </form>
             </section>

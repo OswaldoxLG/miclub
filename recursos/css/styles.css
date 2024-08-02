@@ -1,3 +1,4 @@
+
 *{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -282,23 +283,28 @@
 /*----Registrarse----*/
 
 .pag-registro{
-    padding: 70px 70px;
     background-image: url(../img/background.jpg);
-    background-size: cover;
 }
 .contenedor-principal-registrarse{
-    background-color: whitesmoke;
-    padding: 20px;
+    background-color: rgba(255,255,255,0.8);
     height: 100vh;
+    width: 1000px;
+    border-radius: 30px;
+    padding: 25px;
     display: grid;
+    margin: 4% auto;
     grid-template-columns: 1fr 1fr;
-    border-radius: 20px;
 }
 .logo-and-nom-regis{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.lts_regis{
+    width: 200px; 
+    height: auto;
+    object-fit: cover;
 }
 .logo-img-pag-regis{
     width: auto;
@@ -313,20 +319,30 @@
     margin-bottom: 20px;
 }
 .campo-regis label {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    margin: 0;
+    font-size: 25px;
+    font-weight: lighter;
 }
 .campo-regis input {
+    background-color:rgba(80,80,80,0.3);
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
-    max-width: 400px;
 }
 .btn-regis{
-    max-width: 420px;;
+    font-size: 25px;
+    color:white;
+    background-color: #F5432B;
+    border:none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-regis:hover {
+    background-color: #d43a23;
 }
 
 /*slider*/

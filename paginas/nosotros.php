@@ -26,7 +26,7 @@ manteniéndose a la vanguardia con tecnologías actualizadas implementadas para 
 de sitios web.</p>
 </div>
 <div class="logo_nosotros">
-<img src="<?php echo BASE_URL; ?>recursos/img/conetics.png" class="conetics">
+<img src="<?php echo BASE_URL;?>recursos/img/conetics.png" class="conetics">
 </div>
 <?php
 include_once BASE_PATH . 'includes/footer.php';
