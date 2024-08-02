@@ -414,20 +414,26 @@
     justify-content: center;
 }
 .info_cursos{
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: green;
-    width: 700px;
+    color: white;
+    height: 100px;
+    width: 500px;
     border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .imagen_cursos{
-    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color:white;
     height: 200px;
     width: 200px;
+    color:red;
 }
-.info_cursos{
-    display: column;
-
+.boton_cursos{
+    background-color: red;
+    
+}
+.accion_cursos{
+    
 }
