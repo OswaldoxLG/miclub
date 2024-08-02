@@ -390,3 +390,28 @@
     border-radius: 10px;
     margin-bottom: 10px;
 }
+.centrar_cursos{
+    background-color: grey;
+    margin-left: 175px;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+.info_cursos{
+    margin: 20px;
+    background-color: green;
+    width: 700px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagen_cursos{
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+}
+.info_cursos{
+    display: column;
+
+}
