@@ -946,3 +946,22 @@ body.con-body-form-admincat {
     cursor: pointer;
     width: 100%;
 }
+
+.header_catalogos{
+    height: 100px;
+    background-color: black;
+    display: flex;
+
+}
+.contenido_catalogos{
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.centro_catalogos{
+    background-color: gray;
+}
+.tabla_catalogos{
+    border: 1px solid black;
+}
