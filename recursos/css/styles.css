@@ -22,7 +22,6 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    margin-top: 30px;
 }
 .logo-pie {
     display: flex;
@@ -362,6 +361,7 @@
     border-radius: 80px;
     padding: 5px;
     overflow: hidden; 
+    margin-bottom: 30px;
 }
 
 .miclub_con_clic::before {
@@ -772,23 +772,44 @@ a img.icono {
     vertical-align: middle;
 }
 
+
 /*----admin instructores index---*/
-@media (max-width: 768px) { 
-    .aside-admininstruct {
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+.img_cat{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.img_catalogos{
+    width: auto;
+    height: 90px;
+
+}
+.letras_proy_cat{
+    max-width: 150px;
+    height: 70px;
+} 
+.aside-admininstruct {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
+        height: 100vh;
+    
 }
-@media (min-width: 769px) { 
-    .aside-admininstruct {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-}
+
 
 /*---categorias create--*/
 
