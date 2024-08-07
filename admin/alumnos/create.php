@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agregar alumno</title>
-  <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/styles.css">
+  <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
 <body class="con-body-form-adminalu">
 <?php

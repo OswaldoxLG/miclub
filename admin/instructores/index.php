@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Instructores</title>
     <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
 <body>
 <body>
@@ -57,8 +57,8 @@
                                         <td>Gomez</td>
                                         <td>al22234039@gmail.com</td>
                                         <td>7224568975</td>
-                                        <td><a href="update.php"><img src="<?php echo BASE_URL; ?>recursos/img/editar.png" alt="Editar" class="icono" title="Editar Instructor"></a></td>
-                                        <td><a href="#"><img src="<?php echo BASE_URL; ?>recursos/img/borrar.png" alt="Eliminar" class="icono" title="Eliminar Instructor"></a></td>
+                                        <td><a href="update.php"><img src="<?php echo BASE_URL; ?>recursos/img/editar.png" alt="Editar" class="icono-cat" title="Editar Instructor"></a></td>
+                                        <td><a href="#"><img src="<?php echo BASE_URL; ?>recursos/img/borrar.png" alt="Eliminar" class="icono-cat" title="Eliminar Instructor"></a></td>
                                     </tr>
                                 </tbody>
                             </table>
