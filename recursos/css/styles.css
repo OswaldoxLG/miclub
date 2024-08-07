@@ -409,11 +409,38 @@
 .centrar_cursos{
     margin-left: 175px;
     width: 1000px;
-    display: flex;
+    display:grid;
     justify-content: center;
 }
 .contenido_cursos{
     background-color: #ADD02E;
+    border-radius: 20px;
+    margin: 20px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido_cursos_a{
+    background-color: #FADD4C;
+    border-radius: 20px;
+    margin: 20px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido_cursos_c{
+    background-color: #1C83AC;
+    border-radius: 20px;
+    margin: 20px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenido_cursos_s{
+    background-color: #F5432B;
     border-radius: 20px;
     margin: 20px;
     width: 800px;
@@ -426,6 +453,9 @@
     background-color: #F5432B;
     width: 300px;
     height: 200px;
+    overflow: hidden;
+    border: 3px solid white;
+    border-radius: 15px;
 }
 .texto_cursos{
     color:white;
@@ -433,7 +463,8 @@
 }
 .accion_cursos{
     color:white;
-    font-style: none;
+    text-decoration: none;
+    font-family: Helvetica bold;
 }
 .boton_cursos{
     background-color: #F5432B;

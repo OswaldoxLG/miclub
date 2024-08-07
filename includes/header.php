@@ -5,7 +5,7 @@
     <div class="container-fluid mx-2">
       <div class="d-flex align-items-center">
         <a href="/miclub/index.php"><img src="/miclub/recursos/img/logo.png" alt="Logo del proyecto" class="header_logo me-2"></a>
-        <img src="/miclub/recursos/img/letras.png" alt="nombre"  class="letras_logo me-auto">
+        <a href="/miclub/index.php"><img src="/miclub/recursos/img/letras.png" alt="nombre"  class="letras_logo me-auto"></a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,24 +16,24 @@
             <a class="nav-link active" aria-current="page" href="#"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="./paginas/nosotros.php">Nosotros</a>
+            <a class="nav-link text-white" href="/miclub/paginas/nosotros.php">Nosotros</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Categorías
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Artístico</a></li>
-              <li><a class="dropdown-item" href="#">Deportivo</a></li>
-              <li><a class="dropdown-item" href="#">Cultural</a></li>
-              <li><a class="dropdown-item" href="#">Social</a></li>
+              <li><a class="dropdown-item" href="/miclub/paginas/cursos_artisticos.php">Artístico</a></li>
+              <li><a class="dropdown-item" href="/miclub/paginas/cursos_deportes.php">Deportivo</a></li>
+              <li><a class="dropdown-item" href="/miclub/paginas/cursos_culturales.php">Cultural</a></li>
+              <li><a class="dropdown-item" href="/miclub/paginas/cursos_sociales.php">Social</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="./paginas/login.php">Iniciar sesión</a>
+            <a class="nav-link text-white" href="/miclub/paginas/login.php">Iniciar sesión</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="./paginas/registrarse.php">Registrarse</a>
+            <a class="nav-link text-white" href="/miclub/paginas/registrarse.php">Registrarse</a>
           </li>
         </ul>
       </div>

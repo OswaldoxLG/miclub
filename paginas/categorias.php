@@ -21,7 +21,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
           <div class="texto">
             <h2>ARTÍSTICO</h2>
             <p>Explora tu creatividad a través de diversas disciplinas como la pintura, la música, el teatro y muchas más.</p>
-            <a href="#" class="boton">Ver más</a> </div>
+            <a href="/miclub/paginas/cursos_artisticos.php" class="boton">Ver más</a> </div>
         </article>
       
         <article class="articulo deportivo">
@@ -29,7 +29,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
           <div class="texto">
             <h2>DEPORTIVO</h2>
             <p>Mejora tu condición física, y fomenta el espíritu deportivo mientras te diviertes y haces nuevos amigos.</p>
-            <a href="#" class="boton">Ver más</a> </div>
+            <a href="/miclub/paginas/cursos_deportes.php" class="boton">Ver más</a> </div>
         </article>
       
         <article class="articulo social">
@@ -37,7 +37,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
           <div class="texto">
             <h2>SOCIAL</h2>
             <p>Crea lazos duraderos, fomenta la convivencia y contribuye a un ambiente social positivo y enriquecedor.</p>
-            <a href="#" class="boton">Ver más</a> </div>
+            <a href="/miclub/paginas/cursos_sociales.php" class="boton">Ver más</a> </div>
         </article>
       
         <article class="articulo cultural">
@@ -45,7 +45,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
           <div class="texto">
             <h2>CULTURAL</h2>
             <p>Explora la historia, la música, las tradiciones y las expresiones artísticas de tu entorno y de todo el mundo.</p>
-            <a href="#" class="boton">Ver más</a> </div>
+            <a href="/miclub/paginas/cursos_culturales.php" class="boton">Ver más</a> </div>
         </article>
       </section>
       <?php
