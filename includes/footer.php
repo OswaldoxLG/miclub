@@ -10,7 +10,7 @@
                         <h4 class="footer_text_main">Clubes</h4>
                         <ul>
                             <li><a href="#">Artísticos</a></li>
-                            <li><a href="#">Deportivos</a></li>
+                            <li><a href="./paginas/cursos_deportes.php">Deportivos</a></li>
                             <li><a href="#">Culturales</a></li>
                             <li><a href="#">Sociales</a></li>
                         </ul>    
@@ -18,7 +18,7 @@
                     <div class="enlaces-pie">
                         <h4 class="footer_text_main">Acerca del sitio</h4>
                         <ul>
-                            <li><a href="#">Acerca de nosotros</a></li>
+                            <li><a href="./paginas/nosotros.php">Acerca de nosotros</a></li>
                             <li><a href="<?php echo BASE_URL; ?>paginas/contact.php">Contáctanos</a></li>
                         </ul>   
                     </div>

@@ -16,7 +16,7 @@
             <a class="nav-link active" aria-current="page" href="#"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Nosotros</a>
+            <a class="nav-link text-white" href="./paginas/nosotros.php">Nosotros</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,10 +30,10 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Iniciar sesión</a>
+            <a class="nav-link text-white" href="./paginas/login.php">Iniciar sesión</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Registrarse</a>
+            <a class="nav-link text-white" href="./paginas/registrarse.php">Registrarse</a>
           </li>
         </ul>
       </div>
