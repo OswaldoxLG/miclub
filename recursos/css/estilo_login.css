@@ -1,6 +1,6 @@
 .login_background {
     background-image: url(../img/background.jpg);
-    background-size: cover;
+    background-size: 1600px;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
@@ -30,9 +30,8 @@
     height: 100px;
     width: auto; 
 }
-.logos_login img{
+.logo_login{
     width: 200px;
-    height: 100px;
 }
 .barra_prin_login {
     display: flex;
