@@ -21,7 +21,7 @@
         <div class="con_ter_form1">
             <div class="con_cuar_form1">
             <div class="con_tit_form1">
-                <h2 class="nom_form_form1">AGREGAR ALUMNO</h2>
+                <h2 class="nom_form_form1">AGREGAR ADMINISTRADOR</h2>
             </div>
             <form action="altaalumnos.php" method="POST" class="con_form1">
                 <label for="nombre" class="label-form1">Nombre:</label>

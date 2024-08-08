@@ -21,19 +21,13 @@
         <div class="con_ter_form1">
             <div class="con_cuar_form1">
             <div class="con_tit_form1">
-                <h2 class="nom_form_form1">AGREGAR ALUMNO</h2>
+                <h2 class="nom_form_form1">AGREGAR CLUB</h2>
             </div>
             <form action="altaalumnos.php" method="POST" class="con_form1">
                 <label for="nombre" class="label-form1">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" class="input-form1" required>
-                <label for="apellido-paterno" class="label-form1">Apellido paterno:</label>
-                <input type="text" id="apellido-paterno" name="apellido-paterno" class="input-form1" required>
-                <label for="apellido-materno" class="label-form1">Apellido materno:</label>
-                <input type="text" id="apellido-materno" name="apellido-materno" class="input-form1" required>
-                <label for="correo" class="label-form1">Correo:</label>
-                <input type="text" id="correo" name="correo" class="input-form1" required>
-                <label for="telefono" class="label-form1">Teléfono:</label>
-                <input type="text" id="telefono" name="telefono" class="input-form1" required>
+                <label for="descripcion" class="label-form1">Descripción:</label>
+                <input type="text" id="descripcion" name="descipcion" class="input-form1" required>
                 <input type="submit"  name="insert" value="AGREGAR" class="btn_form1">
             </form>
             </div>

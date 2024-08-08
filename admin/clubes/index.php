@@ -41,6 +41,10 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Nombre</th>
+                                        <th>Apellido paterno</th>
+                                        <th>Apellido materno</th>
+                                        <th>Correo</th>
+                                        <th>Telefono</th> 
                                         <th>Editar</th>
                                         <th>Eliminar</th>
                                     </tr>
@@ -49,6 +53,10 @@
                                     <tr>
                                         <td>1</td>
                                         <td>Jesus</td>
+                                        <td>Fernandez</td>
+                                        <td>Gomez</td>
+                                        <td>al22234039@gmail.com</td>
+                                        <td>7224568975</td>
                                         <td><a href="update.php"><img src="<?php echo BASE_URL; ?>recursos/img/editar.png" alt="Editar" class="icono-cat" title="Editar Instructor"></a></td>
                                         <td><a href="#"><img src="<?php echo BASE_URL; ?>recursos/img/borrar.png" alt="Eliminar" class="icono-cat" title="Eliminar Instructor"></a></td>
                                     </tr>

@@ -28,7 +28,7 @@
                         </nav>
                     </aside>
                     <main class="col-md-9 col-lg-10 p-4">
-                        <h1 class="text-center mb-4">INSTRUCTORES</h1>
+                        <h1 class="text-center mb-4">ADMINISTRADORES</h1>
                         <div class="d-flex mb-3">
                             <a href="altainstructores.php" class="btn btn-success d-flex align-items-center">
                                 <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Instructor" class="me-2" style="width: 24px; height: 24px;">
@@ -41,6 +41,10 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Nombre</th>
+                                        <th>Apellido paterno</th>
+                                        <th>Apellido materno</th>
+                                        <th>Correo</th>
+                                        <th>Telefono</th> 
                                         <th>Editar</th>
                                         <th>Eliminar</th>
                                     </tr>
@@ -49,6 +53,10 @@
                                     <tr>
                                         <td>1</td>
                                         <td>Jesus</td>
+                                        <td>Fernandez</td>
+                                        <td>Gomez</td>
+                                        <td>al22234039@gmail.com</td>
+                                        <td>7224568975</td>
                                         <td><a href="update.php"><img src="<?php echo BASE_URL; ?>recursos/img/editar.png" alt="Editar" class="icono-cat" title="Editar Instructor"></a></td>
                                         <td><a href="#"><img src="<?php echo BASE_URL; ?>recursos/img/borrar.png" alt="Eliminar" class="icono-cat" title="Eliminar Instructor"></a></td>
                                     </tr>

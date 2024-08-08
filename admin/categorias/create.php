@@ -1,26 +1,34 @@
 <?php include_once '../../config.php'; ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar categoría</title>
+    <title>Document</title>
     <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
-<body class="con-body-form-admincat">
-    <div class="con-prin-form-admincat">
-        <div class="con-form-img-admincat">
-            <img class="logo_admin_create" src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="logo">
-            <h2 class="h2-form-admincat">My Club</h2>
+<body>
+    <div class="con_prin_form1">
+        <div class="con_sec_form1">
+            <div class="con_img_form1">
+                <img src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="Imagen de curso" class="img_cur_form1">
+            </div>
+            <div class="con_ltr_form1">
+                <img src="<?php echo BASE_URL; ?>recursos/img/letras.png" alt="Letras del proyecto" class="img_ltr_form1">
+            </div>
         </div>
-        <div class="con-form-admincat">
-            <h1 id="h1-form-admincat">Agregar categoría</h1>
-            <form action="./admincategorias.php" method="POST">
-                <label for="nombreCategoria" class="label-form-admincat">Nombre de la categoría:</label>
-                <input type="text" id="categoria" name="categoria" class="input-form-cat" required>
-                <button type="submit" class="boton-agregar-admincat">Agregar</button>
+        <div class="con_ter_form1">
+            <div class="con_cuar_form1">
+            <div class="con_tit_form1">
+                <h2 class="nom_form_form1">AGREGAR CATEGORÍA</h2>
+            </div>
+            <form action="altaalumnos.php" method="POST" class="con_form1">
+                <label for="nombre" class="label-form1">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="input-form1" required>
+                <input type="submit"  name="insert" value="AGREGAR" class="btn_form1">
             </form>
+            </div>
         </div>
     </div>
 </body>
