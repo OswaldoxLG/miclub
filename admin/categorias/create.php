@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar categoría</title>
     <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
 <body class="con-body-form-admincat">
     <div class="con-prin-form-admincat">
         <div class="con-form-img-admincat">
-            <img src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="logo">
+            <img class="logo_admin_create" src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="logo">
             <h2 class="h2-form-admincat">My Club</h2>
         </div>
         <div class="con-form-admincat">
