@@ -35,6 +35,13 @@ include_once '../config.php';
                         <input type="text" id="apellido-mat" name="apellido-mat" placeholder="Apellido materno">
                     </div>
                     <div class="campo-regis">
+                    <label for="rol">Elige un rol:</label>
+                            <select id="rol" name="rol" class="rol-regis">
+                                <option>Alumno</option>
+                                <option>Intructor</option>
+                            </select>
+                    </div>
+                    <div class="campo-regis">
                         <label for="correo">Correo electronico</label>
                         <input type="email" id="email" name="email" placeholder="Ingrese su correo">
                     </div>

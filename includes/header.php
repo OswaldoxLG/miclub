@@ -29,6 +29,15 @@
               <li><a class="dropdown-item" href="/miclub/paginas/cursos_sociales.php">Social</a></li>
             </ul>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Perfil
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+            </ul>
+          </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="/miclub/paginas/login.php">Iniciar sesión</a>
           </li>
