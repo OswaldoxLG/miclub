@@ -760,6 +760,7 @@ body.con-body-form-admincat {
     background-color: #fff;
     height: 100vh;
     overflow: hidden; 
+    padding: 20px;
 }
 .con_sec_form1{
     display: flex;
@@ -793,9 +794,6 @@ body.con-body-form-admincat {
     height: 100%;
 }
 .con_tit_form1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -871,7 +869,14 @@ body.con-body-form-admincat {
         display: flex;
         flex-direction: column;
         max-width: 100%;
-    }    
+    } 
+    .con_cuar_form1{
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 100%;
+    }   
 }
 @media (max-width: 320px){
     .nom_form_form1{
