@@ -130,20 +130,22 @@
     width: 75%;
 }
 .artistico {
-    background-color: #000;
+    background-color: #FADD4C;
     color: #fff;
 }
 .deportivo {
-    background-color: #fff;
-    color: #000;
+    background-color: #ADD02E;
+    color: white;
 }
 .social {
-    background-color: white;
-    color: black;
+    background-color: #f24e4e;
+    color: white;
+    margin-bottom: 20px;
 }
 .cultural {
-    background-color: #000;
+    background-color: #1C83AC;
     color: #fff;
+    margin-bottom: 20px;
 }
 .boton {
     display: flex; 
@@ -883,4 +885,7 @@ body.con-body-form-admincat {
         color: #fff;
         font-size: large;
     }
+}
+.logo_admin_create{
+    height: 500px;
 }
