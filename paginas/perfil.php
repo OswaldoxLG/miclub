@@ -17,10 +17,11 @@ include_once BASE_PATH . 'includes/busqueda.php';
 ?>
 <div class="container con_prin_perf">
     <div class="con_sec_perf">
-            
-    </div>
+        <div class="con_menu_perf">
+        </div>
     <div class="con_ter_perf">
-    
+        <div class="con_info_perf">
+        </div>
     </div>
 </div>
 <?php
