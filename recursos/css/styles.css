@@ -729,7 +729,7 @@ body.con-body-form-admincat {
     cursor: pointer;
     width: 100%;
 }
-
+/*-------------*/
 .header_catalogos{
     height: 100px;
     background-color: black;
@@ -747,4 +747,133 @@ body.con-body-form-admincat {
 }
 .tabla_catalogos{
     border: 1px solid black;
+}
+
+/*---create_form_*/
+.con_prin_form1{
+    display: grid;
+    grid-template-columns: 40% 50%;
+    gap:10%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-image: radial-gradient(circle, #000000, #434343);
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    height: 100vh;
+    overflow: hidden; /* Añadido para evitar desbordamiento */
+}
+.con_sec_form1{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column; 
+}
+.con_img_form1{
+    max-width: 250px;
+    height: 300px;
+
+}
+.con_ltr_form1{
+    max-width: 250px;
+    height: 100px;
+}
+.img_cur_form1{
+    height: 100%;
+    width: 100%;
+}
+.img_ltr_form1{
+    width: 100%;
+    height: 100%;
+}
+.con_ter_form1{
+    padding: 25px;
+}
+.con_tit_form1{
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+.con_form1{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}    
+.nom_form_form1{
+    color: #fff;
+    font-size: x-large;
+}
+.label-form1 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: lighter;
+    color: #fff;
+}
+.input-form1 {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #434343; /* Color de fondo gris oscuro */
+    color: #ffffff; /* Color de texto blanco para contraste */
+    transition: background-color 0.3s; /* Efecto de transición suave */
+}
+
+.input-form1:focus {
+    background-color: #555555; /* Color más claro al hacer foco */
+    border-color: #ffffff; /* Cambia el borde a blanco al hacer foco */
+    outline: none; /* Elimina el contorno predeterminado */
+}
+.btn_form1{
+    font-size: 25px;
+    color:white;
+    background-color: #F5432B;
+    border:none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+.btn_form1:hover {
+    background-color: #d43a23;
+}
+@media (max-width: 768px) {
+    .con_prin_form1{
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 0;
+        height: auto;
+    }
+    .con_sec_form1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+    .con_ter_form1{
+        padding: 50px;
+    }
+    .con_tit_form1{
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .con_form1{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }    
+}
+@media (max-width: 320px){
+    .nom_form_form1{
+        color: #fff;
+        font-size: large;
+    }
 }

@@ -1,35 +1,43 @@
 <?php include_once '../../config.php'; ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agregar instructor</title>
-  <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
-<body class="con-body-form-admininstruct">
-  <div class="con-prin-form-admininstruct">
-    <div class="con-form-img-admininstruct">
-      <img src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="logo">
-      <h2 class="h2-form-admininstruct">My Club</h2>
+<body>
+    <div class="con_prin_form1">
+        <div class="con_sec_form1">
+            <div class="con_img_form1">
+                <img src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="Imagen de curso" class="img_cur_form1">
+            </div>
+            <div class="con_ltr_form1">
+                <img src="<?php echo BASE_URL; ?>recursos/img/letras.png" alt="Letras del proyecto" class="img_ltr_form1">
+            </div>
+        </div>
+        <div class="con_ter_form1">
+            <div class="con_tit_form1">
+                <h2 class="nom_form_form1">AGREGAR INSTRUCTOR</h2>
+            </div>
+            <form action="altaalumnos.php" method="POST" class="con_form1">
+                <label for="nombre" class="label-form1">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="input-form1" required>
+                <label for="apellido-paterno" class="label-form1">Apellido paterno:</label>
+                <input type="text" id="apellido-paterno" name="apellido-paterno" class="input-form1" required>
+                <label for="apellido-materno" class="label-form1">Apellido materno:</label>
+                <input type="text" id="apellido-materno" name="apellido-materno" class="input-form1" required>
+                <label for="correo" class="label-form1">Correo:</label>
+                <input type="text" id="correo" name="correo" class="input-form1" required>
+                <label for="telefono" class="label-form1">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" class="input-form1" required>
+                <input type="submit"  name="insert" value="AGREGAR" class="btn_form1">
+            </form>
+        </div>
     </div>
-    <div class="con-form-admininstruct">
-      <h1 id="h1-form-admininstruct">Agregar Instructor</h1>
-      <form action="admininstructores.php" method="POST">
-        <label for="nombre" class="label-form-adminindtruct">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" class="input-form-admininstruct" required>
-        <label for="apellido-paterno" class="label-form-adminalu">Apellido paterno:</label>
-        <input type="text" id="apellido-paterno" name="apellido-paterno" class="input-form-admininstruct" required>
-        <label for="apellido-materno" class="label-form-adminalu">Apellido materno:</label>
-        <input type="text" id="apellido-materno" name="apellido-materno" class="input-form-admininstruct" required>
-        <label for="correo" class="label-form-adminalu">Correo:</label>
-        <input type="text" id="correo" name="correo" class="input-form-admininstruct" required>
-        <label for="telefono" class="label-form-adminalu">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" class="input-form-admininstruct" required>
-        <button type="submit" class="boton-agregar-admininstruct">Agregar</button>
-      </form>
-    </div>
-  </div>
+    <script src="./recursos/bootstrap.bundle.min.js"></script>
+    <script src="./recursos/jquery-3.6.0.min.js"></script>
 </body>
 </html>
