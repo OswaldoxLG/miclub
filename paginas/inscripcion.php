@@ -1,12 +1,14 @@
-<?php include_once '../../config.php'; ?>
+<?php
+include_once '../config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
+    <title>Miclub | Inscripción</title>
 </head>
 <body>
     <div class="con_prin_form1">
@@ -19,9 +21,9 @@
             </div>
         </div>
         <div class="con_ter_form1">
-            <div class="con_cuar_form1">
+            <div class="con_cuar_form1">    
             <div class="con_tit_form1">
-                <h2 class="nom_form_form1">AGREGAR INSTRUCTOR</h2>
+                <h2 class="nom_form_form1">INSCRÍBETE</h2>
             </div>
             <form action="altaalumnos.php" method="POST" class="con_form1">
                 <label for="nombre" class="label-form1">Nombre:</label>
@@ -30,14 +32,11 @@
                 <input type="text" id="apellido-paterno" name="apellido-paterno" class="input-form1" required>
                 <label for="apellido-materno" class="label-form1">Apellido materno:</label>
                 <input type="text" id="apellido-materno" name="apellido-materno" class="input-form1" required>
-                <label for="correo" class="label-form1">Correo:</label>
-                <input type="text" id="correo" name="correo" class="input-form1" required>
-                <label for="telefono" class="label-form1">Teléfono:</label>
-                <input type="text" id="telefono" name="telefono" class="input-form1" required>
                 <input type="submit"  name="insert" value="AGREGAR" class="btn_form1">
             </form>
             </div>
         </div>
     </div>
+<script src="<?php echo BASE_URL; ?>js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
