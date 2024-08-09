@@ -9,22 +9,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $correo = $_POST['correo'];
     $telefono = $_POST['telefono'];
 
-    // Usar consultas preparadas para evitar inyecciones SQL
-    // Primero, insertamos el teléfono
     $stmt_tel = $conn->prepare("INSERT INTO telefono (tel) VALUES (?)");
     $stmt_tel->bind_param("s", $telefono);
 
     if ($stmt_tel->execute()) {
         $id_tel = $conn->insert_id;
 
-        // Luego, insertamos al usuario
         $stmt_usuario = $conn->prepare("INSERT INTO usuario (nom_u, paterno_u, materno_u, email, id_tel1, id_rol1) VALUES (?, ?, ?, ?, ?, 2)");
         $stmt_usuario->bind_param("ssssi", $nombre, $apellido_paterno, $apellido_materno, $correo, $id_tel);
 
         if ($stmt_usuario->execute()) {
             $id_usuario = $conn->insert_id;
 
-            // Finalmente, insertamos al instructor
             $stmt_instructor = $conn->prepare("INSERT INTO instructor (id_usuario1) VALUES (?)");
             $stmt_instructor->bind_param("i", $id_usuario);
 

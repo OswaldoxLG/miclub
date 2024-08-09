@@ -4,10 +4,10 @@ include_once '../../conexion.php';
 
 // Verificar si se ha recibido el ID del instructor
 if (isset($_GET['id']) || isset($_POST['id_instructor'])) {
-    // Obtener el ID del instructor desde GET o POST
+    // Obtener el ID del instructor POST
     $id_instructor = isset($_GET['id']) ? $_GET['id'] : $_POST['id_instructor'];
 
-    // Obtener los datos actuales del instructor
+    // Obtener los datos actuales
     $sql = "SELECT u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
             FROM instructor i
             INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
@@ -18,7 +18,6 @@ if (isset($_GET['id']) || isset($_POST['id_instructor'])) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Verificar si se encontraron datos
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
     } else {
@@ -30,7 +29,6 @@ if (isset($_GET['id']) || isset($_POST['id_instructor'])) {
     exit();
 }
 
-// Procesar el formulario cuando se envía
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
     $apellido_paterno = $_POST['apellido-paterno'];
@@ -38,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];
     $telefono = $_POST['telefono'];
 
-    // Actualizar la información del instructor
+    // Actualizar la información
     $sql_update = "UPDATE usuario u 
                 INNER JOIN instructor i ON u.id_usuario = i.id_usuario1
                 INNER JOIN telefono t ON u.id_tel1 = t.id_tel
@@ -48,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_update->bind_param('sssssi', $nombre, $apellido_paterno, $apellido_materno, $correo, $telefono, $id_instructor);
 
     if ($stmt_update->execute()) {
-        // Redirigir a la lista de instructores después de la actualización
         header("Location: index.php");
         exit();
     } else {
