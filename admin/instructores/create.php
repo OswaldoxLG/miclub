@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if ($stmt_instructor->execute()) {
                 echo "Instructor agregado exitosamente";
-                header("Location: " . $BASE_URL . "admin/instructores/index.php");
+                header("Location: index.php");
                 exit();
             } else {
                 echo "Error al insertar instructor: " . $stmt_instructor->error;

@@ -74,7 +74,7 @@ if (!$result) {
                                             echo "<td>" . htmlspecialchars($row['materno_u']) . "</td>";
                                             echo "<td>" . htmlspecialchars($row['email']) . "</td>";
                                             echo "<td>" . htmlspecialchars($row['tel']) . "</td>";
-                                            echo "<td><a href='" . BASE_URL . "admin/instructores/update.php?id=" . urlencode($row['id_instructor']) . "'><img src='" . BASE_URL . "recursos/img/editar.png' alt='Editar' class='icono-cat' title='Editar Instructor'></a></td>";
+                                            echo "<td><a href='update.php?id=" . urlencode($row['id_instructor']) . "'><img src='" . BASE_URL . "recursos/img/editar.png' alt='Editar' class='icono-cat' title='Editar Instructor'></a></td>";
                                             echo "<td><a href='delete.php?id=" . urlencode($row['id_instructor']) . "' onclick=\"return confirm('¿Estás seguro de que quieres eliminar este instructor?');\"><img src='" . BASE_URL . "recursos/img/borrar.png' alt='Eliminar' class='icono-cat' title='Eliminar Instructor'></a></td>";
                                             echo "</tr>";
                                         }
