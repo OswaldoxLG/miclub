@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Instructores</title>
+    <title>Lista Categorías</title>
     <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
@@ -28,7 +28,7 @@
                         </nav>
                     </aside>
                     <main class="col-md-9 col-lg-10 p-4">
-                        <h1 class="text-center mb-4">INSTRUCTORES</h1>
+                        <h1 class="text-center mb-4">CATEGORÍAS</h1>
                         <div class="d-flex mb-3">
                             <a href="altainstructores.php" class="btn btn-success d-flex align-items-center">
                                 <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Instructor" class="me-2" style="width: 24px; height: 24px;">

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Clubes</title>
     <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
@@ -23,11 +23,18 @@
             <div class="con_tit_form1">
                 <h2 class="nom_form_form1">AGREGAR CLUB</h2>
             </div>
-            <form action="altaalumnos.php" method="POST" class="con_form1">
+            <form action="create.php" method="POST" class="con_form1">
                 <label for="nombre" class="label-form1">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" class="input-form1" required>
                 <label for="descripcion" class="label-form1">Descripción:</label>
                 <input type="text" id="descripcion" name="descipcion" class="input-form1" required>
+                <label for="categoria" class="label-form1">Elige una categoría:</label>
+                            <select id="categoria" name="categoria" class="input-form1">
+                                <option>Artístico</option>
+                                <option>Deportivo</option>
+                                <option>Cultural</option>
+                                <option>Social</option>
+                            </select>
                 <input type="submit"  name="insert" value="AGREGAR" class="btn_form1">
             </form>
             </div>
