@@ -1,4 +1,5 @@
-<?php include_once '../../config.php'; ?>
+<?php include_once '../../config.php'; 
+include_once '../../conexion.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,11 +21,11 @@
                             <img src="<?php echo BASE_URL; ?>recursos/img/letras.png" alt="nombre del proyecto" class="img-fluid mb-2 letras_proy_cat">
                         </div>
                         <nav class="nav flex-column">
-                            <a href="admin.php" class="nav-link text-light">Administradores</a>
-                            <a href="admincategorias.php" class="nav-link text-light">Categorías</a>
-                            <a href="admincursos.php" class="nav-link text-light">Cursos</a>
-                            <a href="admininstructores.php" class="nav-link text-light">Instructores</a>
-                            <a href="adminalu.php" class="nav-link text-light">Alumnos</a>
+                            <a href="/miclub/admin/administradores/index.php" class="nav-link text-light">Administradores</a>
+                            <a href="/miclub/admin/categorias/index.php" class="nav-link text-light">Categorías</a>
+                            <a href="/miclub/admin/cursos/index.php" class="nav-link text-light">Cursos</a>
+                            <a href="/miclub/admin/instructores/index.php" class="nav-link text-light">Instructores</a>
+                            <a href="/miclub/admin/alumnos/index.php" class="nav-link text-light">Alumnos</a>
                         </nav>
                     </aside>
                     <main class="col-md-9 col-lg-10 p-4">
