@@ -33,10 +33,10 @@ include_once '../config.php';
                     <input type="password" name="password" placeholder="Ingrese su contraseña">
                 </div>
                 <div class="btn-regis-con">
-                    <button type="submit" class="btn-regis">INICIA SESIÓN COMO INTEGRANTE</button>
-                </div>           
+                    <button type="submit" class="btn-regis-instructor">INICIAR SESIÓN COMO INSTRUCTOR</button>
+                </div>  
             </form>  
-            <button type="submit" class="btn-regis-instructor"><a href="/miclub/paginas/login_instructor.php" class="action_login">INICIAR SESIÓN COMO INSTRUCTOR</a></button>
+            <button type="submit" class="btn-regis"><a href="/miclub/paginas/login.php" class="action_login">INICIA SESIÓN COMO INTEGRANTE</a></button>         
             <div class="txt_login">
                 <p>"Comienza una nueva aventura"</p>
             </div> 

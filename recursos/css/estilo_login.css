@@ -1,11 +1,7 @@
 .login_background {
     background-image: url(../img/background.jpg);
-    background-size: 1600px;
-    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .contenedor_blanco_login {
@@ -66,4 +62,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.action_login{
+    text-decoration: none;
 }

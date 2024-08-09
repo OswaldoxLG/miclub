@@ -332,7 +332,8 @@
     border-radius: 5px;
 }
 .btn-regis{
-    font-size: 25px;
+    margin-bottom: 10px;
+    font-size: 15px;
     color:white;
     background-color: #F5432B;
     border:none;
@@ -343,6 +344,34 @@
 }
 .btn-regis:hover {
     background-color: #d43a23;
+}
+.btn-regis-instructor{
+    margin-bottom: 10px;
+    font-size: 15px;
+    color:white;
+    background-color: #1C83AC;
+    border:none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-regis-instructor:hover {
+    background-color: #12759c;
+}
+.btn-regis-admin{
+    margin-bottom: 10px;
+    font-size: 15px;
+    color:white;
+    background-color: #272727;
+    border:none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-regis-admin:hover {
+    background-color: black;
 }
 
 /*slider*/
