@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="con_tit_form1">
                     <h2 class="nom_form_form1">AGREGAR INSTRUCTOR</h2>
                 </div>
-                <form action="<?php echo BASE_URL; ?>admin/instructores/create.php" method="POST" class="con_form1">
+                <form action="create.php" method="POST" class="con_form1">
                     <label for="nombre" class="label-form1">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" class="input-form1" required>
                     <label for="apellido-paterno" class="label-form1">Apellido paterno:</label>
