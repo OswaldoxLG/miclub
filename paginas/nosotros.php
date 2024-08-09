@@ -43,7 +43,7 @@ gracias al nivel de eficiencia, creatividad, interactividad y seguridad y protec
 <!--fotos team ed fany-->
 <section class="team">
         <div class="team-member">
-           <!-- <img src="./" alt="Marcos Jesus Ugalde Zarza">-->
+           <!-- <img src="./" alt="Marcos Jesus Ugalde Zarza"> modificar -->
             <h2>Marcos Jesus Ugalde Zarza</h2>
             <p>Director General</p>
             <div class="social-links">
@@ -52,7 +52,7 @@ gracias al nivel de eficiencia, creatividad, interactividad y seguridad y protec
             </div>
         </div>
         <div class="team-member">
-            <img src="C:\xampp\htdocs\miclub\recursos\img\oswa.jpg" alt="Oswaldo Lopez Gomez">
+            <!--img src="C:\xampp\htdocs\miclub\recursos\img\oswa.jpg" alt="Oswaldo Lopez Gomez">modificar-->
             <h2>Oswaldo Lopez Gomez</h2>
             <p>Programador</p>
             <div class="social-links">
@@ -61,7 +61,7 @@ gracias al nivel de eficiencia, creatividad, interactividad y seguridad y protec
             </div>
         </div>
         <div class="team-member">
-            <img src="./any.jpg" alt="Stephany Reyes Rodriguez">
+            <!--<img src="./any.jpg" alt="Stephany Reyes Rodriguez">modificar-->
             <h2>Stephany Reyes Rodriguez</h2>
             <p>Desarrollador Web</p>
             <div class="social-links">
