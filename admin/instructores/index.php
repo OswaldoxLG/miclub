@@ -42,7 +42,7 @@ if (!$result) {
                         </nav>
                     </aside>
                     <main class="col-md-9 col-lg-10 p-4">
-                        <h1 class="text-center mb-4">INSTRUCTORES</h1>
+                        <h1 class="text-center mb-4">INSTRUCTOR</h1>
                         <div class="d-flex mb-3">
                             <a href="<?php echo BASE_URL; ?>admin/instructores/create.php" class="btn btn-success d-flex align-items-center">
                                 <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Instructor" class="me-2" style="width: 24px; height: 24px;">
