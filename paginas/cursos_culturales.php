@@ -17,6 +17,8 @@ include_once BASE_PATH . 'includes/busqueda.php';
 ?>
 
 <div class="centrar_cursos">
+    <div class="con_sec_cursos">
+    
     <div class="contenido_cursos_c">
         <div class="imagenes_cursos">
             <img src="../recursos/img/curso_futbol.png">
@@ -60,6 +62,8 @@ include_once BASE_PATH . 'includes/busqueda.php';
             <p>costo</p>
             <button class="boton_cursos"><a href="#" class="accion_cursos">INSCRIBIRSE</a></button>
         </div>
+    </div>
+
     </div>
 </div>
 <?php
