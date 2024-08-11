@@ -439,14 +439,15 @@
 
 /*cursos deportes*/
 .centrar_cursos{
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-}
-.con_sec_cursos{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 40px;
+}
+.txt_cursos{
+    font-size: xx-large;
 }
 .contenido_cursos{
     background-color: #ADD02E;

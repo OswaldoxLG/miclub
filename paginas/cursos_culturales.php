@@ -17,8 +17,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
 ?>
 
 <div class="centrar_cursos">
-    <div class="con_sec_cursos">
-    
+    <div class="con_titu_cursos"><h1 class="txt_cursos">CURSOS DEPORTIVOS</h1></div>
     <div class="contenido_cursos_c">
         <div class="imagenes_cursos">
             <img src="../recursos/img/curso_futbol.png">
