@@ -1,15 +1,28 @@
-<?php include_once '../../config.php'; 
-include_once '../../conexion.php';?>
+<?php
+include_once '../../config.php';
+include_once '../../conexion.php';
+
+// Lista de alumnos
+$sql = "SELECT i.id_integrante, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
+        FROM integrante i
+        INNER JOIN usuario u ON i.id_usuario2 = u.id_usuario
+        INNER JOIN telefono t ON u.id_tel1 = t.id_tel";
+
+$result = $conn->query($sql);
+
+if (!$result) {
+    die("Error en la consulta: " . $conn->error);
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Alumnos</title>
-    <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
-<body>
 <body>
     <div class="wrapper">
         <div class="content">
@@ -31,8 +44,8 @@ include_once '../../conexion.php';?>
                     <main class="col-md-9 col-lg-10 p-4">
                         <h1 class="text-center mb-4">ALUMNOS</h1>
                         <div class="d-flex mb-3">
-                            <a href="altainstructores.php" class="btn btn-success d-flex align-items-center">
-                                <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Instructor" class="me-2" style="width: 24px; height: 24px;">
+                            <a href="<?php echo BASE_URL; ?>admin/alumnos/create.php" class="btn btn-success d-flex align-items-center">
+                                <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Alumno" class="me-2" style="width: 24px; height: 24px;">
                                 <span class="text-white">Añadir</span>
                             </a>
                         </div>
@@ -45,22 +58,30 @@ include_once '../../conexion.php';?>
                                         <th>Apellido paterno</th>
                                         <th>Apellido materno</th>
                                         <th>Correo</th>
-                                        <th>Telefono</th> 
+                                        <th>Teléfono</th> 
                                         <th>Editar</th>
                                         <th>Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Jesus</td>
-                                        <td>Fernandez</td>
-                                        <td>Gomez</td>
-                                        <td>al22234039@gmail.com</td>
-                                        <td>7224568975</td>
-                                        <td><a href="update.php"><img src="<?php echo BASE_URL; ?>recursos/img/editar.png" alt="Editar" class="icono-cat" title="Editar Instructor"></a></td>
-                                        <td><a href="#"><img src="<?php echo BASE_URL; ?>recursos/img/borrar.png" alt="Eliminar" class="icono-cat" title="Eliminar Instructor"></a></td>
-                                    </tr>
+                                <?php 
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<tr>";
+                                            echo "<td>" . htmlspecialchars($row['id_integrante']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['nom_u']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['paterno_u']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['materno_u']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['tel']) . "</td>";
+                                            echo "<td><a href='update.php?id=" . urlencode($row['id_integrante']) . "'><img src='" . BASE_URL . "recursos/img/editar.png' alt='Editar' class='icono-cat' title='Editar Alumno'></a></td>";
+                                            echo "<td><a href='delete.php?id=" . urlencode($row['id_integrante']) . "' onclick=\"return confirm('¿Estás seguro de que quieres eliminar este alumno?');\"><img src='" . BASE_URL . "recursos/img/borrar.png' alt='Eliminar' class='icono-cat' title='Eliminar Alumno'></a></td>";
+                                            echo "</tr>";
+                                        }
+                                    } else {
+                                        echo "<tr><td colspan='8'>No hay alumnos registrados</td></tr>";
+                                    }
+                                ?>
                                 </tbody>
                             </table>
                         </div>
