@@ -5,7 +5,7 @@ include_once '../../conexion.php';
 // Lista de alumnos
 $sql = "SELECT i.id_integrante, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
         FROM integrante i
-        INNER JOIN usuario u ON i.id_usuario2 = u.id_usuario
+        INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
         INNER JOIN telefono t ON u.id_tel1 = t.id_tel";
 
 $result = $conn->query($sql);
@@ -95,3 +95,4 @@ if (!$result) {
     <script src="<?php echo BASE_URL; ?>js/jquery-3.6.0.min.js"></script>
 </body>
 </html>
+
