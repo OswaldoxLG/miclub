@@ -37,8 +37,8 @@ include_once '../config.php';
                     <div class="campo-regis">
                     <label for="rol">Elige un rol:</label>
                             <select id="rol" name="rol" class="rol-regis">
-                                <option>Alumno</option>
-                                <option>Intructor</option>
+                                <option value="Alumno">Alumno</option>
+                                <option value="Instructor">Intructor</option>
                             </select>
                     </div>
                     <div class="campo-regis">
@@ -46,8 +46,13 @@ include_once '../config.php';
                         <input type="email" id="email" name="email" placeholder="Ingrese su correo">
                     </div>
                     <div class="campo-regis">
-                        <label for="password">contraseña</label>
-                        <input type="password" id="password" name="password" placeholder="Contraseña">
+                        <label for="password">Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control">
+                            <button type="button" class="btn-toggle-password">
+                                <img src="../recursos/img/eye.png" alt="Mostrar contraseña" id="eye-icon" class="eye-icon">
+                            </button>
+                        </div>
                     </div>
                     <div class="btn-regis-con">
                     <button type="submit" class="btn-regis">REGISTRARSE</button>
@@ -55,5 +60,6 @@ include_once '../config.php';
                 </form>
             </section>
         </main>
+        <script src="../recursos/js/passwd-eye.js"></script>
 </body>
 </html>

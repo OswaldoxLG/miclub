@@ -283,9 +283,14 @@
 
 
 /*----Registrarse----*/
-
-.pag-registro{
-    background-image: url(../img/background.jpg);
+.background_registro{
+    background-image:url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .contenedor-principal-registrarse{
     background-color: rgba(255,255,255,0.8);
@@ -373,6 +378,35 @@
 .btn-regis-admin:hover {
     background-color: black;
 }
+.input-group {
+    display: flex;
+    align-items: center;
+    position: relative; 
+
+}
+
+.form-control {
+    flex: 1; 
+    border-radius: 5px 0 0 5px; 
+    padding-right: 40px; 
+}
+
+.btn-toggle-password {
+    position: absolute; 
+    right: 0; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px; 
+}
+
+.eye-icon {
+    width: 24px; 
+    height: auto;
+}
+
 
 /*slider*/
 
@@ -507,15 +541,6 @@
 }
 .boton_cursos{
     background-color: #F5432B;
-}
-.background_registro{
-    background-image:url(../img/background.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
