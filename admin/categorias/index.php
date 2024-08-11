@@ -1,15 +1,22 @@
-<?php include_once '../../config.php'; 
-include_once '../../conexion.php'; ?>
+<?php 
+include_once '../../config.php'; 
+include_once '../../conexion.php'; 
+
+$sql = "SELECT id_categoria, categoria FROM categoria";
+$result = $conn->query($sql);
+if (!$result){
+    die("Error en la consulta: ". $conn->error);
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Categorías</title>
-    <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
+    <title>Lista de Categorías</title>
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
-<body>
 <body>
     <div class="wrapper">
         <div class="content">
@@ -31,8 +38,8 @@ include_once '../../conexion.php'; ?>
                     <main class="col-md-9 col-lg-10 p-4">
                         <h1 class="text-center mb-4">CATEGORÍAS</h1>
                         <div class="d-flex mb-3">
-                            <a href="altainstructores.php" class="btn btn-success d-flex align-items-center">
-                                <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Instructor" class="me-2" style="width: 24px; height: 24px;">
+                            <a href="create.php" class="btn btn-success d-flex align-items-center">
+                                <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Categoría" class="me-2" style="width: 24px; height: 24px;">
                                 <span class="text-white">Añadir</span>
                             </a>
                         </div>
@@ -47,12 +54,20 @@ include_once '../../conexion.php'; ?>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Jesus</td>
-                                        <td><a href="update.php"><img src="<?php echo BASE_URL; ?>recursos/img/editar.png" alt="Editar" class="icono-cat" title="Editar Instructor"></a></td>
-                                        <td><a href="#"><img src="<?php echo BASE_URL; ?>recursos/img/borrar.png" alt="Eliminar" class="icono-cat" title="Eliminar Instructor"></a></td>
-                                    </tr>
+                                    <?php 
+                                        if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()){
+                                            echo "<tr>";
+                                            echo "<td>" . htmlspecialchars($row['id_categoria']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['categoria']) . "</td>";
+                                            echo "<td><a href='update.php?id=" . urlencode($row['id_categoria']) . "'><img src='" . BASE_URL . "recursos/img/editar.png' alt='Editar' class='icono-cat' title='Editar Categoria'></a></td>";
+                                            echo "<td><a href='delete.php?id=" . urlencode($row['id_categoria']) . "' onclick=\"return confirm('¿Estás seguro de que quieres eliminar este instructor?');\"><img src='" . BASE_URL . "recursos/img/borrar.png' alt='Eliminar' class='icono-cat' title='Eliminar Categoría'></a></d>";
+                                            echo"</tr>";
+                                        }
+                                    } else {
+                                        echo"<tr><td colspan='8'>No hay categorías registradas.</td></tr>";
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -64,5 +79,6 @@ include_once '../../conexion.php'; ?>
     </div>
     <script src="<?php echo BASE_URL; ?>js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo BASE_URL; ?>js/jquery-3.6.0.min.js"></script>
+    <?php $conn->close(); ?>
 </body>
 </html>

@@ -91,5 +91,6 @@ if (!$result) {
     </div>
     <script src="<?php echo BASE_URL; ?>js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo BASE_URL; ?>js/jquery-3.6.0.min.js"></script>
+    <?php $conn->close(); ?>
 </body>
 </html>

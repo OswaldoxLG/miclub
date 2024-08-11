@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label for="correo" class="label-form1">Correo:</label>
                     <input type="email" id="correo" name="correo" class="input-form1" required>
                     <label for="telefono" class="label-form1">Teléfono:</label>
-                    <input type="text" id="telefono" name="telefono" class="input-form1" required>
+                    <input type="text" id="telefono" name="telefono" class="input-form1">
                     <input type="submit" name="insert" value="AGREGAR" class="btn_form1">
                 </form>
             </div>
