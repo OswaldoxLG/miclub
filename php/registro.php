@@ -32,10 +32,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt_instructor = $conn->prepare($sql_instructor);
             $stmt_instructor->bind_param("i", $user_id);
             $stmt_instructor->execute();
+        } elseif ($rol == 'Administrador') {
+            $sql_administrador = "INSERT INTO administrador (id_usuario1) VALUES (?)";
+            $stmt_administrador = $conn->prepare($sql_administrador);
+            $stmt_administrador->bind_param("i", $user_id);
+            $stmt_administrador->execute();
         }
 
         // Redirigir o mostrar mensaje de éxito
-        header("Location: login.php");
+        header("Location: " . BASE_URL . "index.php");
         exit();
     } else {
         echo "Error: " . $conn->error;

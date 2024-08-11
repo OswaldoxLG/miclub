@@ -29,7 +29,7 @@ session_start();
                             <?php elseif ($_SESSION['user_role'] == 'Alumno'): ?>
                                 <li><a class="dropdown-item" href="/miclub/integrante/profile.php">Mi perfil</a></li>
                             <?php endif; ?>
-                            <li><a class="dropdown-item" href="/miclub/paginas/logout.php">Cerrar Sesión</a></li>
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>php/logout.php">Cerrar Sesión</a></li>
                         </ul>
                     <?php else: ?>
                         <a class="nav-link text-white" href="/miclub/paginas/login.php">Iniciar sesión</a>

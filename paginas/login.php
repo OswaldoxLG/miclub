@@ -23,7 +23,7 @@ include_once '../config.php';
             <div class="login_tit">
                 <h1 class="titulo_login">BIENVENIDO</h1>
             </div>
-            <form method="post" action="login_process.php">
+            <form method="post" action="../php/login_process.php">
                 <div class="campo-regis">
                     <label for="email">Correo electrónico</label>
                     <input type="email" name="email" placeholder="Ingrese su correo">

@@ -1,12 +1,6 @@
 <?php
 include_once 'config.php';
 
-session_start();
-if (!isset($_SESSION['user_id'])) {
-  header("Location: /miclub/paginas/login.php"); // Redirige si no está autenticado
-  exit();
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

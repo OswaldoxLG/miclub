@@ -1,5 +1,6 @@
 <?php
 include_once '../config.php';
+include_once '../conexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +22,7 @@ include_once '../config.php';
                 <h1>REGISTRATE</h1> 
                 </div>
                 <div class="form-contenedor-regis">
-                <form action="registrophp.php" method="POST">
+                <form action="<?php echo BASE_URL; ?>php/registro.php" method="POST">
                     <div class="campo-regis">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
@@ -39,6 +40,7 @@ include_once '../config.php';
                             <select id="rol" name="rol" class="rol-regis">
                                 <option value="Alumno">Alumno</option>
                                 <option value="Instructor">Intructor</option>
+                                <option value="Administrador">Administrador</option>
                             </select>
                     </div>
                     <div class="campo-regis">
