@@ -20,23 +20,23 @@ if (isset($_GET['id']) || isset($_POST['id_curso'])) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
     } else {
-        echo "No se encontró el curso.";
+        echo "No se encontró el club.";
         exit();
     }
 } else {
-    echo "ID de curso no proporcionado.";
+    echo "ID de club no proporcionado.";
     exit();
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
-    $categoria = $_POST['categoria'];
+    $categoria_nombre = $_POST['categoria'];
 
     // Obtener el ID de la categoría seleccionada
     $sql_categoria = "SELECT id_categoria FROM categoria WHERE categoria = ?";
     $stmt_categoria = $conn->prepare($sql_categoria);
-    $stmt_categoria->bind_param('s', $categoria);
+    $stmt_categoria->bind_param('s', $categoria_nombre);
     $stmt_categoria->execute();
     $result_categoria = $stmt_categoria->get_result();
     
@@ -88,12 +88,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2 class="nom_form_form1">MODIFICAR CURSO</h2>
                 </div>
                 <form action="update.php" method="POST" class="con_form1">
-                    <input type="hidden" name="id_curso" value="<?php echo $id_curso; ?>">
+                    <input type="hidden" name="id_curso" value="<?php echo htmlspecialchars($id_curso); ?>">
+                    
                     <label for="nombre" class="label-form1">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" class="input-form1" value="<?php echo htmlspecialchars($row['nom_curso']); ?>" required>
                     
                     <label for="descripcion" class="label-form1">Descripción:</label>
-                    <input type="text" id="descripcion" name="descripcion" class="input-form1" value="<?php echo htmlspecialchars($row['descripcion']); ?>" required>
+                    <textarea id="descripcion" name="descripcion" class="input-form1" required><?php echo htmlspecialchars($row['descripcion']); ?></textarea>
                     
                     <label for="categoria" class="label-form1">Elige una categoría:</label>
                     <select id="categoria" name="categoria" class="input-form1" required>
@@ -115,3 +116,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </body>
 </html>
+

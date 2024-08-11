@@ -18,7 +18,7 @@ if (!$result) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Cursos</title>
+    <title>Lista Clubes</title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
@@ -35,13 +35,13 @@ if (!$result) {
                         <nav class="nav flex-column">
                             <a href="/miclub/admin/administradores/index.php" class="nav-link text-light">Administradores</a>
                             <a href="/miclub/admin/categorias/index.php" class="nav-link text-light">Categorías</a>
-                            <a href="/miclub/admin/clubes/index.php" class="nav-link text-light">Cursos</a>
+                            <a href="/miclub/admin/clubes/index.php" class="nav-link text-light">Clubes</a>
                             <a href="/miclub/admin/instructores/index.php" class="nav-link text-light">Instructores</a>
                             <a href="/miclub/admin/alumnos/index.php" class="nav-link text-light">Alumnos</a>
                         </nav>
                     </aside>
                     <main class="col-md-9 col-lg-10 p-4">
-                        <h1 class="text-center mb-4">CURSOS</h1>
+                        <h1 class="text-center mb-4">CLUBES</h1>
                         <div class="d-flex mb-3">
                             <a href="<?php echo BASE_URL; ?>admin/clubes/create.php" class="btn btn-success d-flex align-items-center">
                                 <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Curso" class="me-2" style="width: 24px; height: 24px;">
@@ -74,7 +74,7 @@ if (!$result) {
                                             echo "</tr>";
                                         }
                                     } else {
-                                        echo "<tr><td colspan='6'>No hay cursos registrados</td></tr>";
+                                        echo "<tr><td colspan='6'>No hay clubes registrados</td></tr>";
                                     }
                                 ?>
                                 </tbody>
