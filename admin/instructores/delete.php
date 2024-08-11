@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
     $conn->begin_transaction();
 
     try {
-        //obtenemos el id_usuario asociado al instructor
+        //se obtiene el id_usuario asociado al instructor
         $sql_get_user = "SELECT id_usuario1 FROM instructor WHERE id_instructor = ?";
         $stmt_get_user = $conn->prepare($sql_get_user);
         $stmt_get_user->bind_param('i', $id_instructor);
