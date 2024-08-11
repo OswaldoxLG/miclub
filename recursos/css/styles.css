@@ -448,6 +448,8 @@
 }
 .txt_cursos{
     font-size: xx-large;
+    text-decoration-style: solid;
+    text-shadow: 2px 2px 2px 5px red;
 }
 .contenido_cursos{
     background-color: #ADD02E;
