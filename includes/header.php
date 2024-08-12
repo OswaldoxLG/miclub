@@ -1,5 +1,6 @@
-<?php
-session_start();
+<?php session_start();
+//echo 'Sesión Iniciada'; 
+//var_dump($_SESSION);
 ?>
 <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
@@ -35,7 +36,7 @@ session_start();
                         </a>
                         <ul class="dropdown-menu">
                             <?php if ($_SESSION['user_role'] == 'Administrador'): ?>
-                                <li><a class="dropdown-item" href="/miclub/admin/dashboard.php">Panel</a></li>
+                                <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>admin/panel.php">Panel</a></li>
                             <?php elseif ($_SESSION['user_role'] == 'Instructor'): ?>
                                 <li><a class="dropdown-item" href="/miclub/instructor/profile.php">Mi perfil</a></li>
                             <?php elseif ($_SESSION['user_role'] == 'Alumno'): ?>
