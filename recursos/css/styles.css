@@ -950,3 +950,79 @@ body.con-body-form-admincat {
 .logo_admin_create{
     height: 500px;
 }
+
+/*panel*/
+.con_prin_pan {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .tit_cat_pan {
+    margin-bottom: 30px;
+  }
+  
+  .txt_cat_pan {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .con_sec_pan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .con_cat_pan {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .con_img_pan {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  
+  .img_cat_pan {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .con_info_cat {
+    margin-top: 10px;
+  }
+  
+  .nom_cat_pan {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Responsiveness */
+  
+  @media (max-width: 768px) {
+    .con_cat_pan {
+      width: 150px;
+    }
+  
+    .con_img_pan {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .con_cat_pan {
+      width: 100px;
+    }
+  
+    .con_img_pan {
+      width: 60px;
+      height: 60px;
+    }
+  }
