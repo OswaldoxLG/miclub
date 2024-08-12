@@ -5,7 +5,7 @@ session_start();
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 
 <nav class="navbar navbar-expand-md bg-black navbar-dark header_all">
-    <div class="container-fluid mx-2">
+    <div class="container mx-3">
         <div class="d-flex align-items-center">
         <a href="/miclub/index.php"><img src="/miclub/recursos/img/logo.png" alt="Logo del proyecto" class="header_logo me-2"></a>
         <a href="/miclub/index.php"><img src="/miclub/recursos/img/letras.png" alt="nombre"  class="letras_logo me-auto"></a>
@@ -15,6 +15,18 @@ session_start();
         </button>
         <div class="collapse navbar-collapse mx-2" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/miclub/paginas/nosotros.php">Nosotros</a>
+                </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/miclub/paginas/cursos_artisticos.php">Artístico</a></li>
+                <li><a class="dropdown-item" href="/miclub/paginas/cursos_deportes.php">Deportivo</a></li>
+                <li><a class="dropdown-item" href="/miclub/paginas/cursos_culturales.php">Cultural</a></li>
+                <li><a class="dropdown-item" href="/miclub/paginas/cursos_sociales.php">Social</a></li>
+            </ul>
+            </li>
                 <!-- Otros elementos del menú -->
                 <li class="nav-item dropdown">
                     <?php if (isset($_SESSION['user_id'])): ?>
@@ -23,7 +35,7 @@ session_start();
                         </a>
                         <ul class="dropdown-menu">
                             <?php if ($_SESSION['user_role'] == 'Administrador'): ?>
-                                <li><a class="dropdown-item" href="/miclub/admin/dashboard.php">Área Admin</a></li>
+                                <li><a class="dropdown-item" href="/miclub/admin/dashboard.php">Panel</a></li>
                             <?php elseif ($_SESSION['user_role'] == 'Instructor'): ?>
                                 <li><a class="dropdown-item" href="/miclub/instructor/profile.php">Mi perfil</a></li>
                             <?php elseif ($_SESSION['user_role'] == 'Alumno'): ?>
@@ -32,11 +44,13 @@ session_start();
                             <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>php/logout.php">Cerrar Sesión</a></li>
                         </ul>
                     <?php else: ?>
-                        <a class="nav-link text-white" href="/miclub/paginas/login.php">Iniciar sesión</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/miclub/paginas/login.php">Iniciar sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/miclub/paginas/registrarse.php">Registrarse</a>
+                        </li>
                     <?php endif; ?>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="/miclub/paginas/registrarse.php">Registrarse</a>
                 </li>
             </ul>
         </div>

@@ -2,12 +2,11 @@
 include_once '../../config.php'; 
 include_once '../../conexion.php';
 
-// Verificar si se ha recibido el ID del administrador
+
 if (isset($_GET['id']) || isset($_POST['id_admin'])) {
-    // Obtener el ID del administrador POST
+
     $id_admin = isset($_GET['id']) ? $_GET['id'] : $_POST['id_admin'];
 
-    // Obtener los datos actuales
     $sql = "SELECT u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
             FROM administrador a
             INNER JOIN usuario u ON a.id_usuario1 = u.id_usuario
@@ -36,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];
     $telefono = $_POST['telefono'];
 
-    // Actualizar la información
     $sql_update = "UPDATE usuario u 
                 INNER JOIN administrador a ON u.id_usuario = a.id_usuario1
                 INNER JOIN telefono t ON u.id_tel1 = t.id_tel

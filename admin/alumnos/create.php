@@ -9,14 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];
     $telefono = $_POST['telefono'];
 
-    // Insertar el nuevo teléfono
     $sql_tel = "INSERT INTO telefono (tel) VALUES (?)";
     $stmt_tel = $conn->prepare($sql_tel);
     $stmt_tel->bind_param("s", $telefono);
     if ($stmt_tel->execute()) {
         $id_tel = $stmt_tel->insert_id;
 
-        // Insertar el nuevo usuario
         $sql_usuario = "INSERT INTO usuario (nom_u, paterno_u, materno_u, email, id_tel1, id_rol1) VALUES (?, ?, ?, ?, ?, 1)";
         $stmt_usuario = $conn->prepare($sql_usuario);
         $stmt_usuario->bind_param("ssssi", $nombre, $apellido_paterno, $apellido_materno, $correo, $id_tel);
@@ -24,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt_usuario->execute()) {
             $id_usuario = $stmt_usuario->insert_id;
 
-            // Insertar en la tabla integrante
             $sql_alumno = "INSERT INTO integrante (id_usuario1) VALUES (?)";
             $stmt_alumno = $conn->prepare($sql_alumno);
             $stmt_alumno->bind_param("i", $id_usuario);

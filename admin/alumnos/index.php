@@ -2,7 +2,6 @@
 include_once '../../config.php';
 include_once '../../conexion.php';
 
-// Lista de alumnos
 $sql = "SELECT i.id_integrante, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
         FROM integrante i
         INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
@@ -93,6 +92,7 @@ if (!$result) {
     </div>
     <script src="<?php echo BASE_URL; ?>js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo BASE_URL; ?>js/jquery-3.6.0.min.js"></script>
+    <?php $conn->close(); ?>
 </body>
 </html>
 

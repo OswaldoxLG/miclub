@@ -2,7 +2,6 @@
 include_once '../../config.php'; 
 include_once '../../conexion.php';
 
-// Obtener todas las categorías para mostrar en el select
 $sql_categorias = "SELECT id_categoria, categoria FROM categoria";
 $result_categorias = $conn->query($sql_categorias);
 
@@ -11,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $descripcion = $_POST['descripcion'];
     $id_categoria = $_POST['categoria'];
 
-    // Insertar el curso en la base de datos
     $stmt_curso = $conn->prepare("INSERT INTO curso (nom_curso, descripcion, id_categoria1) VALUES (?, ?, ?)");
     $stmt_curso->bind_param("ssi", $nombre, $descripcion, $id_categoria);
 
@@ -60,7 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <select id="categoria" name="categoria" class="input-form1" required>
                         <option value="">Seleccione una categoría</option>
                         <?php
-                        // Verificar si hay categorías disponibles
                         if ($result_categorias->num_rows > 0) {
                             while ($row_categoria = $result_categorias->fetch_assoc()) {
                                 echo "<option value=\"" . htmlspecialchars($row_categoria['id_categoria']) . "\">" . htmlspecialchars($row_categoria['categoria']) . "</option>";

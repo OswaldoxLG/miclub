@@ -16,7 +16,6 @@ if (isset($_GET['id'])) {
         $result_check = $stmt_check->get_result();
 
         if ($result_check->num_rows > 0) {
-            // Eliminar el curso de la base de datos
             $sql_delete_curso = "DELETE FROM curso WHERE id_curso = ?";
             $stmt_delete_curso = $conn->prepare($sql_delete_curso);
             $stmt_delete_curso->bind_param('i', $id_curso);

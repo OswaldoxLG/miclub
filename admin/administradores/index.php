@@ -2,7 +2,6 @@
 include_once '../../config.php'; 
 include_once '../../conexion.php'; 
 
-// lista de administradores
 $sql = "SELECT a.id_admin, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
         FROM administrador a
         INNER JOIN usuario u ON a.id_usuario1 = u.id_usuario

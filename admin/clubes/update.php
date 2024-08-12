@@ -2,12 +2,10 @@
 include_once '../../config.php'; 
 include_once '../../conexion.php';
 
-// Verificar si se ha recibido el ID del curso
+
 if (isset($_GET['id']) || isset($_POST['id_curso'])) {
-    // Obtener el ID del curso
     $id_curso = isset($_GET['id']) ? $_GET['id'] : $_POST['id_curso'];
 
-    // Obtener los datos actuales del curso
     $sql = "SELECT c.nom_curso, c.descripcion, c.id_categoria1, cat.categoria
             FROM curso c
             INNER JOIN categoria cat ON c.id_categoria1 = cat.id_categoria
@@ -33,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descripcion = $_POST['descripcion'];
     $categoria_nombre = $_POST['categoria'];
 
-    // Obtener el ID de la categoría seleccionada
     $sql_categoria = "SELECT id_categoria FROM categoria WHERE categoria = ?";
     $stmt_categoria = $conn->prepare($sql_categoria);
     $stmt_categoria->bind_param('s', $categoria_nombre);
@@ -44,10 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row_categoria = $result_categoria->fetch_assoc();
         $id_categoria = $row_categoria['id_categoria'];
         
-        // Actualizar la información del curso
+
         $sql_update = "UPDATE curso
-                       SET nom_curso = ?, descripcion = ?, id_categoria1 = ?
-                       WHERE id_curso = ?";
+                    SET nom_curso = ?, descripcion = ?, id_categoria1 = ?
+                    WHERE id_curso = ?";
         $stmt_update = $conn->prepare($sql_update);
         $stmt_update->bind_param('ssii', $nombre, $descripcion, $id_categoria, $id_curso);
 
@@ -99,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="categoria" class="label-form1">Elige una categoría:</label>
                     <select id="categoria" name="categoria" class="input-form1" required>
                         <?php
-                        // Obtener las categorías para el select
+
                         $sql_categorias = "SELECT categoria FROM categoria";
                         $result_categorias = $conn->query($sql_categorias);
                         while ($row_categoria = $result_categorias->fetch_assoc()) {

@@ -2,11 +2,9 @@
 include_once '../../config.php';
 include_once '../../conexion.php';
 
-// Verifica si se ha enviado el ID del alumno para la edición
 if(isset($_GET['id']) || isset($_POST['id_integrante'])) {
     $id_alumno = isset($_GET['id']) ? $_GET['id'] : $_POST['id_integrante'];
 
-    // Consulta para obtener los datos actuales del alumno
     $sql = "SELECT u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
             FROM integrante i
             INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
@@ -17,7 +15,6 @@ if(isset($_GET['id']) || isset($_POST['id_integrante'])) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Verifica si se ha encontrado un alumno con ese ID
     if($result->num_rows > 0) {
         $row = $result->fetch_assoc();
     }

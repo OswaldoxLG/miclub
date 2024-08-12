@@ -8,7 +8,6 @@ if (isset($_GET['id'])) {
     $conn->begin_transaction();
 
     try {
-        // Verificar si la categoría existe
         $sql_check_categoria = "SELECT id_categoria FROM categoria WHERE id_categoria = ?";
         $stmt_check_categoria = $conn->prepare($sql_check_categoria);
         $stmt_check_categoria->bind_param('i', $id_categoria);
@@ -16,7 +15,6 @@ if (isset($_GET['id'])) {
         $result_check_categoria = $stmt_check_categoria->get_result();
 
         if ($result_check_categoria->num_rows > 0) {
-            // Eliminar la categoría
             $sql_delete_categoria = "DELETE FROM categoria WHERE id_categoria = ?";
             $stmt_delete_categoria = $conn->prepare($sql_delete_categoria);
             $stmt_delete_categoria->bind_param('i', $id_categoria);
