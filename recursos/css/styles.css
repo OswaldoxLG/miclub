@@ -1034,7 +1034,8 @@ body.con-body-form-admincat {
 /*perfil */
 .con_prin_perf{
     display: grid;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 20% 70%;
+    gap:10%;
     padding: 0;
 }
 .con_barra_perf{
@@ -1085,4 +1086,15 @@ body.con-body-form-admincat {
     justify-content: center;
     flex-direction: column;
 }
-@media 
+@media (max-width:1080px){
+    .contenido_cursos_a{
+        width: 545px;
+        height: auto;
+    }
+}
+@media (max-width:){
+    .contenido_cursos_a{
+        width: 350px;
+        height: auto;
+    }
+}
