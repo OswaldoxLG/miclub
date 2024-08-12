@@ -24,7 +24,7 @@ if (!$result){
                 <div class="row">
                     <aside class="col-md-3 col-lg-2 bg-dark text-light p-4 aside-admininstruct">
                         <div class="img_cat">
-                            <img src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="Mi Club Logo" class="img-fluid mb-2 img_catalogos">
+                        <a href="<?php echo BASE_URL; ?>index.php"><img src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="Mi Club Logo" class="img-fluid mb-2 img_catalogos"></a>
                             <img src="<?php echo BASE_URL; ?>recursos/img/letras.png" alt="nombre del proyecto" class="img-fluid mb-2 letras_proy_cat">
                         </div>
                         <nav class="nav flex-column">
