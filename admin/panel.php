@@ -1,3 +1,8 @@
+<?php
+include_once '../config.php';
+include_once '../conexion.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,10 @@
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
     <title>Miclub | Panel del administrador</title>
 </head>
-<body>
+<body class="con_body_panel">
+<?php 
+include_once BASE_PATH . 'includes/header.php';
+?>
     <div class="container con_prin_pan">
         <div class="tit_cat_pan">
             <h1 class="txt_cat_pan">CATÁLOGOS</h1>
@@ -55,6 +63,8 @@
         </div>
     </div>
     </div>
-    
+    <?php
+include_once BASE_PATH . 'includes/footer.php';
+?>
 </body>
 </html>

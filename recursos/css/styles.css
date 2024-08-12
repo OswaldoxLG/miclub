@@ -952,12 +952,23 @@ body.con-body-form-admincat {
 }
 
 /*panel*/
+.con_body_panel{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container.con_prin_pan {
+    flex: 1;
+}
 .con_prin_pan {
-    text-align: center;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   
   .tit_cat_pan {
+    text-align: center;
     margin-bottom: 30px;
   }
   
@@ -971,6 +982,7 @@ body.con-body-form-admincat {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
   }
   
   .con_cat_pan {
@@ -990,7 +1002,7 @@ body.con-body-form-admincat {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 20px;
   }
   
   .con_info_cat {
@@ -1019,6 +1031,9 @@ body.con-body-form-admincat {
   @media (max-width: 480px) {
     .con_cat_pan {
       width: 100px;
+    }
+    .nom_cat_pan{
+        font-size: 12px;
     }
   
     .con_img_pan {
