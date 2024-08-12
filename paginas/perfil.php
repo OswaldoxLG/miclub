@@ -19,14 +19,14 @@ include_once BASE_PATH . 'includes/busqueda.php';
     <div class="con_barra_perf">
         <div class="con_menu_perf">
             <div class="con_img_perf">
-                <img src="#" alt="imagen de perfil" class="img_perf">
+                <img src="<?php echo BASE_URL; ?>recursos/img/avatar.png" alt="imagen de perfil" class="img_perf">
             </div>
-            <div>
+            <div class="salu_perf">
                 <strong>Hola</strong>
             </div>
             <div class="con_crear_curso">
             <div class="con_btn_crear">
-                <a href="#">Crear curso</a>
+                <a href="#" class="in_btn_crear">CREAR CURSO</a>
             </div>
             </div>
         </div>
