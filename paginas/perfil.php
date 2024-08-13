@@ -1,5 +1,7 @@
 <?php
 include_once '../config.php';
+include_once '../conexion.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,13 +24,15 @@ include_once BASE_PATH . 'includes/busqueda.php';
                 <img src="<?php echo BASE_URL; ?>recursos/img/avatar.png" alt="imagen de perfil" class="img_perf">
             </div>
             <div class="salu_perf">
-                <strong>Hola</strong>
+                <strong>Hola <?php echo $_SESSION['user_name']; ?></strong>
             </div>
+            <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === "Instructor") { ?>
             <div class="con_crear_curso">
             <div class="con_btn_crear">
-                <a href="#" class="in_btn_crear">CREAR CURSO</a>
+                <a href="<?php echo BASE_URL; ?>instructor/newclub/index.php" class="in_btn_crear">CREAR CURSO</a>
             </div>
             </div>
+            <?php } ?>
         </div>
     </div>
     <div class="con_sec_perf">

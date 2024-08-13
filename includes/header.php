@@ -1,6 +1,6 @@
 <?php session_start();
 //echo 'Sesión Iniciada'; 
-//var_dump($_SESSION);
+var_dump($_SESSION);
 ?>
 <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
@@ -38,9 +38,9 @@
                             <?php if ($_SESSION['user_role'] == 'Administrador'): ?>
                                 <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>admin/panel.php">Panel</a></li>
                             <?php elseif ($_SESSION['user_role'] == 'Instructor'): ?>
-                                <li><a class="dropdown-item" href="/miclub/instructor/profile.php">Mi perfil</a></li>
+                                <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>paginas/perfil.php">Mi perfil</a></li>
                             <?php elseif ($_SESSION['user_role'] == 'Alumno'): ?>
-                                <li><a class="dropdown-item" href="/miclub/integrante/profile.php">Mi perfil</a></li>
+                                <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>paginas/perfil.php">Mi perfil</a></li>
                             <?php endif; ?>
                             <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>php/logout.php">Cerrar Sesión</a></li>
                         </ul>
