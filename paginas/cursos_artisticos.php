@@ -41,12 +41,6 @@ include_once BASE_PATH . 'includes/busqueda.php';
         <div class="texto_cursos">
             <h3><?php echo htmlspecialchars($curso['nom_curso']); ?></h3>
             <p><?php echo htmlspecialchars($curso['descripcion']); ?></p>
-            <?php if ($user_role === 'Alumno'): ?>
-            <form action="inscribir.php" method="post">
-                <input type="hidden" name="curso_id" value="<?php echo $curso['id_curso']; ?>">
-                <button type="submit" class="btn btn-primary">Inscribirse</button>
-            </form>
-            <?php endif; ?>
         </div>
     </div>
     </div>
