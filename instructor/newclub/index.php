@@ -1,8 +1,7 @@
 <?php
-session_start();
 include_once '../../config.php';
 include_once '../../conexion.php';
-
+session_start();
 
 // ID del instructor autenticado
 $id_instructor = $_SESSION['user_id'];
@@ -15,13 +14,16 @@ $sql = "SELECT c.id_curso, c.nom_curso, c.descripcion, c.imagen, cat.categoria
         WHERE ic.id_instructor1 = ?";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $id_instructor);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if (!$result) {
-    die("Error en la consulta: " . $conn->error);
+if (!$stmt) {
+    die("Error en la preparación de la consulta: " . $conn->error);
 }
+$stmt->bind_param("i", $id_instructor);
+
+if (!$stmt->execute()) {
+    die("Error en la consulta: " . $stmt->error);
+}
+
+$result = $stmt->get_result();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,8 +45,8 @@ if (!$result) {
                             <img src="<?php echo BASE_URL; ?>recursos/img/letras.png" alt="nombre del proyecto" class="img-fluid mb-2 letras_proy_cat">
                         </div>
                         <nav class="nav flex-column">
-                            <a href="/miclub/instructor/newclub/index.php" class="nav-link text-light">Clubes</a>
-                            <a href="/miclub/instructor/listaalu/index.php" class="nav-link text-light">Alumnos</a>
+                            <a href="<?php echo BASE_URL; ?>instructor/newclub/index.php" class="nav-link text-light">Clubes</a>
+                            <a href="<?php echo BASE_URL; ?>instructor/listaalu/index.php" class="nav-link text-light">Alumnos</a>
                         </nav>
                     </aside>
                     <main class="col-md-9 col-lg-10 p-4">
@@ -75,9 +77,13 @@ if (!$result) {
                                             echo "<tr>";
                                             echo "<td>" . htmlspecialchars($row['id_curso']) . "</td>";
                                             echo "<td>" . htmlspecialchars($row['nom_curso']) . "</td>";
-                                            echo "<td>" . htmlspecialchars($row['descripcion']) . "</td>";
-                                            // Ruta corregida para la imagen
-                                            echo "<td><img src='" . BASE_URL . "instructores/img_cursos/" . htmlspecialchars($row['imagen']) . "' alt='Imagen del Curso' class='img-fluid' style='width: 130px;'></td>";
+                                            echo "<td>" . htmlspecialchars($row['descripcion']) . "</td>";  
+                                                if (strpos($row['imagen'], 'instructor/img_cursos/') !== false) {
+                                                    $img_src = BASE_URL . htmlspecialchars($row['imagen']);
+                                                } else {
+                                                    $img_src = BASE_URL . 'instructor/img_cursos/' . htmlspecialchars($row['imagen']);
+                                                }
+                                            echo "<td><img src='" . $img_src . "' alt='Imagen del Curso' class='img-fluid' style='width: 130px;'></td>";
                                             echo "<td>" . htmlspecialchars($row['categoria']) . "</td>";
                                             echo "<td><a href='update.php?id=" . urlencode($row['id_curso']) . "'><img src='" . BASE_URL . "recursos/img/editar.png' alt='Editar' class='icono-cat' title='Editar Curso'></a></td>";
                                             echo "<td><a href='delete.php?id=" . urlencode($row['id_curso']) . "' onclick=\"return confirm('¿Estás seguro de que quieres eliminar este curso?');\"><img src='" . BASE_URL . "recursos/img/borrar.png' alt='Eliminar' class='icono-cat' title='Eliminar Curso'></a></td>";
@@ -86,7 +92,7 @@ if (!$result) {
                                     } else {
                                         echo "<tr><td colspan='7'>No hay clubes registrados</td></tr>";
                                     }
-                                ?>
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -96,12 +102,10 @@ if (!$result) {
         </div>
         <?php include_once BASE_PATH . 'includes/footer.php'; ?>
     </div>
-    <script src="<?php echo BASE_URL; ?>js/bootstrap.bundle.min.js"></script>
-    <script src="<?php echo BASE_URL; ?>js/jquery-3.6.0.min.js"></script>
+
     <?php 
     $stmt->close();
     $conn->close(); 
     ?>
 </body>
 </html>
-

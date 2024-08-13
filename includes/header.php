@@ -1,6 +1,6 @@
 <?php session_start();
 //echo 'Sesión Iniciada'; 
-var_dump($_SESSION);
+//var_dump($_SESSION);
 ?>
 <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">

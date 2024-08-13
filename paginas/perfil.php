@@ -29,7 +29,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
             <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === "Instructor") { ?>
             <div class="con_crear_curso">
             <div class="con_btn_crear">
-                <a href="<?php echo BASE_URL; ?>instructor/newclub/index.php" class="in_btn_crear">CREAR CURSO</a>
+                <a href="<?php echo BASE_URL; ?>instructor/newclub/index.php" class="in_btn_crear">CREAR CLUB</a>
             </div>
             </div>
             <?php } ?>

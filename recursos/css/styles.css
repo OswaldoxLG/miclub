@@ -1069,12 +1069,12 @@ body.con-body-form-admincat {
     background-color: #d8351e;
     padding: 5px;
     border-radius: 25px;
+    text-align: center;
 }
 .in_btn_crear{
     text-decoration-line: none;
     font-size: large;
     color: #fff;
-    text-align: center;
 }
 .con_sec_perf{
     margin-top: 40px;

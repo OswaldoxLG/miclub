@@ -1,7 +1,8 @@
-<?php
+<?php 
 include_once '../../config.php';
 include_once '../../conexion.php';
 
+// Consulta para obtener la lista de alumnos inscritos
 $sql = "SELECT i.id_integrante, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
         FROM integrante i
         INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
@@ -29,18 +30,18 @@ if (!$result) {
                 <div class="row">
                     <aside class="col-md-3 col-lg-2 bg-dark text-light p-4 aside-admininstruct">
                         <div class="img_cat">
-                        <a href="<?php echo BASE_URL; ?>index.php"><img src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="Mi Club Logo" class="img-fluid mb-2 img_catalogos"></a>
+                            <a href="<?php echo BASE_URL; ?>index.php"><img src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="Mi Club Logo" class="img-fluid mb-2 img_catalogos"></a>
                             <img src="<?php echo BASE_URL; ?>recursos/img/letras.png" alt="nombre del proyecto" class="img-fluid mb-2 letras_proy_cat">
                         </div>
                         <nav class="nav flex-column">
-                        <a href="/miclub/instructor/newclub/index.php" class="nav-link text-light">Clubes</a>
-                        <a href="/miclub/instructor/listaalu/index.php" class="nav-link text-light">Alumnos</a>
+                            <a href="<?php echo BASE_URL; ?>instructor/newclub/index.php" class="nav-link text-light">Clubes</a>
+                            <a href="<?php echo BASE_URL; ?>instructor/listaalu/index.php" class="nav-link text-light">Alumnos</a>
                         </nav>
                     </aside>
                     <main class="col-md-9 col-lg-10 p-4">
                         <h1 class="text-center mb-4">LISTA DE ALUMNOS</h1>
                         <div class="d-flex mb-3">
-                            <a href="<?php echo BASE_URL; ?>admin/alumnos/create.php" class="btn btn-success d-flex align-items-center">
+                            <a href="<?php echo BASE_URL; ?>instructor/newclub/create.php" class="btn btn-success d-flex align-items-center">
                                 <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Alumno" class="me-2" style="width: 24px; height: 24px;">
                                 <span class="text-white">Añadir</span>
                             </a>
@@ -51,8 +52,8 @@ if (!$result) {
                                     <tr>
                                         <th>ID</th>
                                         <th>Nombre</th>
-                                        <th>Apellido paterno</th>
-                                        <th>Apellido materno</th>
+                                        <th>Apellido Paterno</th>
+                                        <th>Apellido Materno</th>
                                         <th>Correo</th>
                                         <th>Teléfono</th> 
                                         <th>Editar</th>
@@ -92,4 +93,3 @@ if (!$result) {
     <?php $conn->close(); ?>
 </body>
 </html>
-
