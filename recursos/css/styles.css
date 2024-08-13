@@ -1092,9 +1092,3 @@ body.con-body-form-admincat {
         height: auto;
     }
 }
-@media (max-width:){
-    .contenido_cursos_a{
-        width: 350px;
-        height: auto;
-    }
-}
