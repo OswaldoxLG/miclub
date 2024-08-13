@@ -23,29 +23,24 @@ include_once '../config.php';
             <div class="login_tit">
                 <h1 class="titulo_login">BIENVENIDO</h1>
             </div>
-            <form method="post" action="../php/login_process.php">
+            <form method="post" action="#">
                 <div class="campo-regis">
                     <label for="email">Correo electrónico</label>
                     <input type="email" name="email" placeholder="Ingrese su correo">
                 </div>
                 <div class="campo-regis">
-                        <label for="password">Contraseña</label>
-                        <div class="input-group">
-                            <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control">
-                            <button type="button" class="btn-toggle-password">
-                                <img src="../recursos/img/eye.png" alt="Mostrar contraseña" id="eye-icon" class="eye-icon">
-                            </button>
-                        </div>
-                    </div>
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" placeholder="Ingrese su contraseña">
+                </div>
                 <div class="btn-regis-con">
-                    <button type="submit" class="btn-regis">INICIA SESIÓN</button>
-                </div>           
-            </form> 
+                    <button type="submit" class="btn-regis-instructor">INICIAR SESIÓN COMO INSTRUCTOR</button>
+                </div>  
+            </form>  
+            <button type="submit" class="btn-regis"><a href="/miclub/paginas/login.php" class="action_login">INICIA SESIÓN COMO INTEGRANTE</a></button>         
             <div class="txt_login">
                 <p>"Comienza una nueva aventura"</p>
             </div> 
         </div>
     </div>
-    <script src="../recursos/js/passwd-eye.js"></script>
 </body>
 </html>

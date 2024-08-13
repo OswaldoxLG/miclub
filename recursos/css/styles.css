@@ -283,9 +283,14 @@
 
 
 /*----Registrarse----*/
-
-.pag-registro{
-    background-image: url(../img/background.jpg);
+.background_registro{
+    background-image:url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .contenedor-principal-registrarse{
     background-color: rgba(255,255,255,0.8);
@@ -332,7 +337,8 @@
     border-radius: 5px;
 }
 .btn-regis{
-    font-size: 25px;
+    margin-bottom: 10px;
+    font-size: 15px;
     color:white;
     background-color: #F5432B;
     border:none;
@@ -344,6 +350,63 @@
 .btn-regis:hover {
     background-color: #d43a23;
 }
+.btn-regis-instructor{
+    margin-bottom: 10px;
+    font-size: 15px;
+    color:white;
+    background-color: #1C83AC;
+    border:none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-regis-instructor:hover {
+    background-color: #12759c;
+}
+.btn-regis-admin{
+    margin-bottom: 10px;
+    font-size: 15px;
+    color:white;
+    background-color: #272727;
+    border:none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-regis-admin:hover {
+    background-color: black;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    position: relative; 
+
+}
+
+.form-control {
+    flex: 1; 
+    border-radius: 5px 0 0 5px; 
+    padding-right: 40px; 
+}
+
+.btn-toggle-password {
+    position: absolute; 
+    right: 0; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px; 
+}
+
+.eye-icon {
+    width: 24px; 
+    height: auto;
+}
+
 
 /*slider*/
 
@@ -410,10 +473,17 @@
 
 /*cursos deportes*/
 .centrar_cursos{
-    margin-left: 175px;
-    width: 1000px;
-    display:grid;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 40px;
+}
+.txt_cursos{
+    font-size: xx-large;
+    text-decoration-style: solid;
+    text-shadow: 2px 2px 2px 5px red;
 }
 .contenido_cursos{
     background-color: #ADD02E;
@@ -471,15 +541,6 @@
 }
 .boton_cursos{
     background-color: #F5432B;
-}
-.background_registro{
-    background-image:url(../img/background.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
@@ -888,4 +949,152 @@ body.con-body-form-admincat {
 }
 .logo_admin_create{
     height: 500px;
+}
+
+/*panel*/
+.con_body_panel{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container.con_prin_pan {
+    flex: 1;
+}
+.con_prin_pan {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.nom_admin_panel{
+    text-align: start;
+    margin-bottom: 30px;
+}
+.tit_cat_pan {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.txt_cat_pan {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+.con_sec_pan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.con_cat_pan {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+.con_img_pan {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+.img_cat_pan {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.con_info_cat {
+    margin-top: 10px;
+}
+.nom_cat_pan {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+@media (max-width: 768px) {
+    .con_cat_pan {
+        width: 150px;
+    }
+    .con_img_pan {
+        width: 80px;
+        height: 80px;
+    }
+}
+@media (max-width: 480px) {
+    .con_cat_pan {
+        width: 100px;
+    }
+    .nom_cat_pan{
+        font-size: 12px;
+    }
+    .con_img_pan {
+        width: 60px;
+        height: 60px;
+    }
+}
+/*perfil */
+.con_prin_perf{
+    display: grid;
+    grid-template-columns: 20% 70%;
+    gap:10%;
+    padding: 0;
+}
+.con_barra_perf{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.con_img_perf{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.img_perf{
+    width: 150px;
+    height: 140px;
+}
+.salu_perf{
+    margin-bottom: 25px;
+}
+.con_crear_curso{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.con_btn_crear{
+    width: 145px;
+    height: 40px;
+    background-color: #d8351e;
+    padding: 5px;
+    border-radius: 25px;
+}
+.in_btn_crear{
+    text-decoration-line: none;
+    font-size: large;
+    color: #fff;
+    text-align: center;
+}
+.con_sec_perf{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.con_info_perf{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+@media (max-width:1080px){
+    .contenido_cursos_a{
+        width: 545px;
+        height: auto;
+    }
+}
+@media (max-width:){
+    .contenido_cursos_a{
+        width: 350px;
+        height: auto;
+    }
 }

@@ -1,39 +1,18 @@
-<?php
+<?php 
 include_once '../../config.php'; 
-include_once '../../conexion.php';
-
-$sql_categorias = "SELECT id_categoria, categoria FROM categoria";
-$result_categorias = $conn->query($sql_categorias);
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nombre = $_POST['nombre'];
-    $descripcion = $_POST['descripcion'];
-    $id_categoria = $_POST['categoria'];
-
-    $stmt_curso = $conn->prepare("INSERT INTO curso (nom_curso, descripcion, id_categoria1) VALUES (?, ?, ?)");
-    $stmt_curso->bind_param("ssi", $nombre, $descripcion, $id_categoria);
-
-    if ($stmt_curso->execute()) {
-        echo "Curso agregado exitosamente";
-        header("Location: index.php");
-        exit();
-    } else {
-        echo "Error al insertar curso: " . $stmt_curso->error;
-    }
-}
+include_once '../../conexion.php'; 
 ?>
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Curso</title>
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
+    <title>MiClub | Crea tu curso</title>
 </head>
 <body>
-    <div class="con_prin_form1">
+<div class="con_prin_form1">
         <div class="con_sec_form1">
             <div class="con_img_form1">
                 <img src="<?php echo BASE_URL; ?>recursos/img/logo.png" alt="Logo del Proyecto" class="img_cur_form1">
@@ -45,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="con_ter_form1">
             <div class="con_cuar_form1">
                 <div class="con_tit_form1">
-                    <h2 class="nom_form_form1">AGREGAR CURSO</h2>
+                    <h2 class="nom_form_form1">CREA UN CLUB</h2>
                 </div>
                 <form action="create.php" method="POST" class="con_form1">
                     <label for="nombre" class="label-form1">Nombre:</label>
@@ -74,4 +53,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </body>
+<script src="../recursos/js/passwd-eye.js"></script>
 </html>
