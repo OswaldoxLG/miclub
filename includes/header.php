@@ -1,6 +1,6 @@
 <?php session_start();
 //echo 'Sesión Iniciada'; 
-//var_dump($_SESSION);
+var_dump($_SESSION);
 ?>
 <link rel="stylesheet"  href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
@@ -28,7 +28,6 @@
                 <li><a class="dropdown-item" href="/miclub/paginas/cursos_sociales.php">Social</a></li>
             </ul>
             </li>
-                <!-- Otros elementos del menú -->
                 <li class="nav-item dropdown">
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

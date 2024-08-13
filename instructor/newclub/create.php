@@ -3,6 +3,26 @@ include_once '../../config.php';
 include_once '../../conexion.php'; 
 session_start();
 
+if (!isset($_SESSION['user_id'])) {
+    die("Error: Usuario no autenticado.");
+}
+
+$usuario_id = $_SESSION['user_id']; // Asumiendo que user_id en sesión es el id_usuario
+
+// Verifica que el usuario autenticado sea un instructor
+$sql_verificar_instructor = "SELECT id_instructor FROM instructor WHERE id_usuario1 = ?";
+$stmt_verificar_instructor = $conn->prepare($sql_verificar_instructor);
+$stmt_verificar_instructor->bind_param("i", $usuario_id);
+$stmt_verificar_instructor->execute();
+$result_instructor = $stmt_verificar_instructor->get_result();
+
+if ($result_instructor->num_rows == 0) {
+    die("Error: El usuario no está registrado como instructor.");
+}
+
+$row_instructor = $result_instructor->fetch_assoc();
+$id_instructor = $row_instructor['id_instructor'];
+
 $sql_categorias = "SELECT id_categoria, categoria FROM categoria";
 $result_categorias = $conn->query($sql_categorias);
 
@@ -11,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
     $categoria_id = $_POST['categoria']; // ID de la categoría seleccionada
-    $instructor_id = $_SESSION['user_id']; // ID del instructor logueado (suponiendo que está en la sesión)
 
     // Manejo de la subida de la imagen
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
@@ -41,32 +60,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $img_url = null; // Si no se sube imagen, el campo en la base de datos se dejará como NULL
     }
 
-    // Insertar los datos en la tabla curso
-    $sql = "INSERT INTO curso (imagen, nom_curso, descripcion, id_categoria1) 
-            VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssi", $img_url, $nombre, $descripcion, $categoria_id);
+    // Insertar el curso en la tabla "curso"
+    $sql_insert_curso = "INSERT INTO curso (nom_curso, descripcion, id_categoria1, imagen) VALUES (?, ?, ?, ?)";
+    $stmt_insert_curso = $conn->prepare($sql_insert_curso);
+    $stmt_insert_curso->bind_param("ssis", $nombre, $descripcion, $categoria_id, $img_url);
 
-    if ($stmt->execute()) {
-        // Obtener el ID del curso insertado
-        $curso_id = $stmt->insert_id;
+    if ($stmt_insert_curso->execute()) {
+        // Obtener el ID del curso recién insertado
+        $curso_id = $stmt_insert_curso->insert_id;
 
-        // Insertar la relación en la tabla instructor_curso
+        // Insertar en la tabla "instructor_curso" para asociar el curso al instructor
         $sql_instructor_curso = "INSERT INTO instructor_curso (id_instructor1, id_curso1) VALUES (?, ?)";
         $stmt_instructor_curso = $conn->prepare($sql_instructor_curso);
-        $stmt_instructor_curso->bind_param("ii", $instructor_id, $curso_id);
+        $stmt_instructor_curso->bind_param("ii", $id_instructor, $curso_id);
 
         if ($stmt_instructor_curso->execute()) {
             header("Location: index.php"); // Redireccionar a la página de cursos
             exit();
         } else {
-            echo "Error al asignar el curso al instructor: " . $stmt_instructor_curso->error;
+            die("Error al asignar el curso al instructor: " . $stmt_instructor_curso->error);
         }
     } else {
-        echo "Error al crear el curso: " . $stmt->error;
+        die("Error al crear el curso: " . $stmt_insert_curso->error);
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

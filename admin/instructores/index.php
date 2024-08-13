@@ -3,9 +3,9 @@ include_once '../../config.php';
 include_once '../../conexion.php';
 
 $sql = "SELECT i.id_instructor, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
-        FROM instructor i
-        INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
-        INNER JOIN telefono t ON u.id_tel1 = t.id_tel";
+    FROM instructor i
+    LEFT JOIN usuario u ON i.id_usuario1 = u.id_usuario
+    LEFT JOIN telefono t ON u.id_tel1 = t.id_tel;";
 
 $result = $conn->query($sql);
 

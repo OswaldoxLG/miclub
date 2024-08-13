@@ -2,7 +2,7 @@
 include_once '../../config.php';
 include_once '../../conexion.php';
 session_start();
-
+//var_dump($_SESSION);
 // ID del instructor autenticado
 $id_instructor = $_SESSION['user_id'];
 
@@ -12,6 +12,14 @@ $sql = "SELECT c.id_curso, c.nom_curso, c.descripcion, c.imagen, cat.categoria
         INNER JOIN categoria cat ON c.id_categoria1 = cat.id_categoria
         INNER JOIN instructor_curso ic ON c.id_curso = ic.id_curso1
         WHERE ic.id_instructor1 = ?";
+        
+        if ($stmt = $conn->prepare($sql)) {
+            $stmt->bind_param("i", $id_instructor);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        } else {
+            die("Error en la preparación de la consulta: " . $conn->error);
+        }
 
 $stmt = $conn->prepare($sql);
 if (!$stmt) {
