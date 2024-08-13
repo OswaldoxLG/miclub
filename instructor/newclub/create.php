@@ -7,9 +7,8 @@ if (!isset($_SESSION['user_id'])) {
     die("Error: Usuario no autenticado.");
 }
 
-$usuario_id = $_SESSION['user_id']; // Asumiendo que user_id en sesión es el id_usuario
+$usuario_id = $_SESSION['user_id']; 
 
-// Verifica que el usuario autenticado sea un instructor
 $sql_verificar_instructor = "SELECT id_instructor FROM instructor WHERE id_usuario1 = ?";
 $stmt_verificar_instructor = $conn->prepare($sql_verificar_instructor);
 $stmt_verificar_instructor->bind_param("i", $usuario_id);
@@ -27,12 +26,11 @@ $sql_categorias = "SELECT id_categoria, categoria FROM categoria";
 $result_categorias = $conn->query($sql_categorias);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener los datos del formulario
+
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
-    $categoria_id = $_POST['categoria']; // ID de la categoría seleccionada
+    $categoria_id = $_POST['categoria']; 
 
-    // Manejo de la subida de la imagen
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
         $img_name = $_FILES['imagen']['name'];
         $img_tmp_name = $_FILES['imagen']['tmp_name'];
@@ -40,13 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $valid_extensions = array("jpg", "jpeg", "png", "gif");
 
         if (in_array($img_file_type, $valid_extensions)) {
-            // Generar un nombre de archivo único
             $img_name = uniqid() . '.' . $img_file_type;
             $img_folder = BASE_PATH . 'instructor/img_cursos/';
             $img_path = $img_folder . $img_name;
 
             if (move_uploaded_file($img_tmp_name, $img_path)) {
-                // Imagen subida exitosamente
                 $img_url = 'instructor/img_cursos/' . $img_name; 
             } else {
                 echo "Hubo un problema al subir la imagen.";
@@ -57,25 +53,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     } else {
-        $img_url = null; // Si no se sube imagen, el campo en la base de datos se dejará como NULL
+        $img_url = null; 
     }
 
-    // Insertar el curso en la tabla "curso"
     $sql_insert_curso = "INSERT INTO curso (nom_curso, descripcion, id_categoria1, imagen) VALUES (?, ?, ?, ?)";
     $stmt_insert_curso = $conn->prepare($sql_insert_curso);
     $stmt_insert_curso->bind_param("ssis", $nombre, $descripcion, $categoria_id, $img_url);
 
     if ($stmt_insert_curso->execute()) {
-        // Obtener el ID del curso recién insertado
         $curso_id = $stmt_insert_curso->insert_id;
 
-        // Insertar en la tabla "instructor_curso" para asociar el curso al instructor
         $sql_instructor_curso = "INSERT INTO instructor_curso (id_instructor1, id_curso1) VALUES (?, ?)";
         $stmt_instructor_curso = $conn->prepare($sql_instructor_curso);
         $stmt_instructor_curso->bind_param("ii", $id_instructor, $curso_id);
 
         if ($stmt_instructor_curso->execute()) {
-            header("Location: index.php"); // Redireccionar a la página de cursos
+            header("Location: index.php"); 
             exit();
         } else {
             die("Error al asignar el curso al instructor: " . $stmt_instructor_curso->error);

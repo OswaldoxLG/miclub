@@ -497,8 +497,9 @@
 .contenido_cursos_a{
     background-color: #FADD4C;
     border-radius: 20px;
-    margin: 20px;
-    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -520,17 +521,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+.info_curso_a {
+    display: flex;
+    justify-content: space-between; /* Opcional: Espacia las columnas si es necesario */
+    width: 100%;
+    gap: 20px; /* Opcional: Espacio entre las columnas */
 }
 .imagenes_cursos{
+    flex: 1;
     margin: 20px;
     background-color: #F5432B;
-    width: 300px;
+    width: 50%;
     height: 200px;
     overflow: hidden;
     border: 3px solid white;
     border-radius: 15px;
 }
+.img_curs_pag{
+    width: 100%;
+    height: 100%;
+
+}
 .texto_cursos{
+    flex: 1;
+    width: 50%;
     color:white;
     margin: 20px;
 }

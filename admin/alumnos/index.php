@@ -1,11 +1,11 @@
 <?php
 include_once '../../config.php';
 include_once '../../conexion.php';
-
+session_start();
 $sql = "SELECT i.id_integrante, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
         FROM integrante i
         INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
-        INNER JOIN telefono t ON u.id_tel1 = t.id_tel";
+        LEFT JOIN telefono t ON u.id_tel1 = t.id_tel";
 
 $result = $conn->query($sql);
 

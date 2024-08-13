@@ -2,7 +2,7 @@
 include_once '../../config.php';
 include_once '../../conexion.php';
 
-// Consulta para obtener la lista de alumnos inscritos
+
 $sql = "SELECT i.id_integrante, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
         FROM integrante i
         INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario

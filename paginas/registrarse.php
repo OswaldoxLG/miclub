@@ -38,7 +38,7 @@ include_once '../conexion.php';
                     <div class="campo-regis">
                     <label for="rol">Elige un rol:</label>
                             <select id="rol" name="rol" class="rol-regis">
-                                <option value="Alumno">Alumno</option>
+                                <option value="Integrante">Alumno</option>
                                 <option value="Instructor">Intructor</option>
                                 <option value="Administrador">Administrador</option>
                             </select>

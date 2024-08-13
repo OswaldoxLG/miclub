@@ -3,15 +3,10 @@ include_once '../../config.php';
 include_once '../../conexion.php';
 session_start();
 //var_dump($_SESSION);
-// ID del instructor autenticado
 $id_instructor = $_SESSION['user_id'];
-//var_dump($id_instructor);
-// Lista de cursos del instructor
 
-// ID del usuario autenticado
 $id_usuario = $_SESSION['user_id'];
 
-// Obtener el id_instructor del usuario
 $sql_instructor = "SELECT id_instructor FROM instructor WHERE id_usuario1 = ?";
 if ($stmt_instructor = $conn->prepare($sql_instructor)) {
     $stmt_instructor->bind_param("i", $id_usuario);

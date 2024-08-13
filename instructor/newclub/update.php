@@ -2,7 +2,6 @@
 include_once '../../config.php'; 
 include_once '../../conexion.php'; 
 
-// Obtener el ID del curso a actualizar
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     echo "ID de curso inválido.";
     exit();
@@ -10,7 +9,6 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 
 $curso_id = intval($_GET['id']);
 
-// Consultar los datos actuales del curso
 $sql_curso = "SELECT nom_curso, descripcion, id_categoria1, imagen FROM curso WHERE id_curso = ?";
 $stmt_curso = $conn->prepare($sql_curso);
 $stmt_curso->bind_param("i", $curso_id);
@@ -24,17 +22,14 @@ if ($result_curso->num_rows === 0) {
 
 $curso = $result_curso->fetch_assoc();
 
-// Consultar categorías
 $sql_categorias = "SELECT id_categoria, categoria FROM categoria";
 $result_categorias = $conn->query($sql_categorias);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener los datos del formulario
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
-    $categoria_id = $_POST['categoria']; // ID de la categoría seleccionada
+    $categoria_id = $_POST['categoria']; 
 
-    // Manejo de la subida de la nueva imagen
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
         $img_name = $_FILES['imagen']['name'];
         $img_tmp_name = $_FILES['imagen']['tmp_name'];
@@ -42,19 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $valid_extensions = array("jpg", "jpeg", "png", "gif");
 
         if (in_array($img_file_type, $valid_extensions)) {
-            // Generar un nombre de archivo único
             $img_name = uniqid() . '.' . $img_file_type;
             $img_folder = '../../instructor/img_curso/';
             $img_path = $img_folder . $img_name;
 
-            // Eliminar la imagen anterior
             if ($curso['imagen'] && file_exists($img_folder . basename($curso['imagen']))) {
                 unlink($img_folder . basename($curso['imagen']));
             }
 
             if (move_uploaded_file($img_tmp_name, $img_path)) {
-                // Imagen subida exitosamente
-                $img_url = 'instructor/img_curso/' . $img_name; // Guardar la dirección relativa
+                $img_url = 'instructor/img_curso/' . $img_name; 
             } else {
                 echo "Hubo un problema al subir la imagen.";
                 exit();
@@ -64,17 +56,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     } else {
-        // Si no se sube una nueva imagen, mantener la imagen actual
         $img_url = $curso['imagen'];
     }
 
-    // Actualizar los datos en la tabla curso
     $sql_update = "UPDATE curso SET imagen = ?, nom_curso = ?, descripcion = ?, id_categoria1 = ? WHERE id_curso = ?";
     $stmt_update = $conn->prepare($sql_update);
     $stmt_update->bind_param("sssii", $img_url, $nombre, $descripcion, $categoria_id, $curso_id);
 
     if ($stmt_update->execute()) {
-        header("Location: index.php"); // Redireccionar a la página de cursos
+        header("Location: index.php"); 
         exit();
     } else {
         echo "Error al actualizar el curso: " . $stmt_update->error;
