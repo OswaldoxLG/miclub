@@ -5,8 +5,31 @@ session_start();
 //var_dump($_SESSION);
 // ID del instructor autenticado
 $id_instructor = $_SESSION['user_id'];
-
+//var_dump($id_instructor);
 // Lista de cursos del instructor
+
+// ID del usuario autenticado
+$id_usuario = $_SESSION['user_id'];
+
+// Obtener el id_instructor del usuario
+$sql_instructor = "SELECT id_instructor FROM instructor WHERE id_usuario1 = ?";
+if ($stmt_instructor = $conn->prepare($sql_instructor)) {
+    $stmt_instructor->bind_param("i", $id_usuario);
+    $stmt_instructor->execute();
+    $result_instructor = $stmt_instructor->get_result();
+    
+    if ($result_instructor->num_rows > 0) {
+        $row_instructor = $result_instructor->fetch_assoc();
+        $id_instructor = $row_instructor['id_instructor'];
+    } else {
+        die("No se encontró el instructor para el usuario con ID: " . htmlspecialchars($id_usuario));
+    }
+    
+    $stmt_instructor->close();
+} else {
+    die("Error en la preparación de la consulta para obtener el instructor: " . $conn->error);
+}
+//sis
 $sql = "SELECT c.id_curso, c.nom_curso, c.descripcion, c.imagen, cat.categoria 
         FROM curso c
         INNER JOIN categoria cat ON c.id_categoria1 = cat.id_categoria
