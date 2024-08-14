@@ -1,7 +1,6 @@
 <?php
 include_once '../config.php';
 include_once '../conexion.php';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
     $apellido_paterno = $_POST['apellido-pat'];
@@ -11,8 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rol = $_POST['rol'];
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-
     $sql_user = "INSERT INTO usuario (nom_u, paterno_u, materno_u, email, contrasena, id_rol1) VALUES (?, ?, ?, ?, ?, (SELECT id_rol FROM rol WHERE rol = ?))";
     $stmt_user = $conn->prepare($sql_user);
     $stmt_user->bind_param("ssssss", $nombre, $apellido_paterno, $apellido_materno, $correo, $hashed_password, $rol);
@@ -36,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt_administrador->bind_param("i", $user_id);
             $stmt_administrador->execute();
         }
-
         header("Location: " . BASE_URL . "index.php");
         exit();
     } else {

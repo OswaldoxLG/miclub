@@ -1,7 +1,7 @@
 <?php
+session_start();
 include_once '../config.php';
 include_once '../conexion.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,9 +46,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
                 </div>
                 <div class="texto_cursos">
                     <h3>TITULO DE EJEMPLO</h3>
-                    <p>Descripción de curso</p>
-                    <p>costo</p>
-                    <button class="boton_cursos"><a href="#" class="accion_cursos">INSCRIBIRSE</a></button>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repudiandae a nostrum non maxime repellat deserunt hic atque minima, sint dolores nemo perferendis. Tenetur expedita ipsam perspiciatis nisi quisquam repellendus?</p>
                 </div>
             </div>
         </div>

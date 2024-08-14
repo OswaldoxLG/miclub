@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once '../../config.php'; 
 include_once '../../conexion.php';
 
@@ -6,11 +7,10 @@ include_once '../../conexion.php';
 if (isset($_GET['id']) || isset($_POST['id_admin'])) {
 
     $id_admin = isset($_GET['id']) ? $_GET['id'] : $_POST['id_admin'];
-
-    $sql = "SELECT u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
-            FROM administrador a
-            INNER JOIN usuario u ON a.id_usuario1 = u.id_usuario
-            INNER JOIN telefono t ON u.id_tel1 = t.id_tel
+    $sql = "SELECT a.id_admin, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
+    FROM administrador a
+    INNER JOIN usuario u ON a.id_usuario1 = u.id_usuario
+    LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
             WHERE a.id_admin = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id_admin);
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql_update = "UPDATE usuario u 
                 INNER JOIN administrador a ON u.id_usuario = a.id_usuario1
-                INNER JOIN telefono t ON u.id_tel1 = t.id_tel
+                LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
                 SET u.nom_u = ?, u.paterno_u = ?, u.materno_u = ?, u.email = ?, t.tel = ?
                 WHERE a.id_admin = ?";
     $stmt_update = $conn->prepare($sql_update);

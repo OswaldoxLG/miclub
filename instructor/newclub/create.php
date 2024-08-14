@@ -1,7 +1,8 @@
-<?php 
+<?php
+session_start(); 
 include_once '../../config.php'; 
 include_once '../../conexion.php'; 
-session_start();
+
 
 if (!isset($_SESSION['user_id'])) {
     die("Error: Usuario no autenticado.");

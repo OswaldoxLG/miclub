@@ -1,8 +1,8 @@
 <?php
+session_start();
 include_once '../../config.php';
 include_once '../../conexion.php';
-session_start();
-//var_dump($_SESSION);
+
 $id_instructor = $_SESSION['user_id'];
 
 $id_usuario = $_SESSION['user_id'];

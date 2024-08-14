@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once '../../config.php';
 include_once '../../conexion.php';
 
@@ -8,7 +9,7 @@ if(isset($_GET['id']) || isset($_POST['id_integrante'])) {
     $sql = "SELECT u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
             FROM integrante i
             INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
-            INNER JOIN telefono t ON u.id_tel1 = t.id_tel
+            LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
             WHERE i.id_integrante = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id_alumno);
@@ -33,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Actualizar la información
     $sql_update = "UPDATE usuario u 
                 INNER JOIN integrante i ON u.id_usuario = i.id_usuario1
-                INNER JOIN telefono t ON u.id_tel1 = t.id_tel
+                LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
                 SET u.nom_u = ?, u.paterno_u = ?, u.materno_u = ?, u.email = ?, t.tel = ?
                 WHERE i.id_integrante = ?";
     $stmt_update = $conn->prepare($sql_update);

@@ -1,17 +1,17 @@
 <?php 
+session_start();
 include_once '../../config.php'; 
 include_once '../../conexion.php';
 
 // Verificar si se ha recibido el ID del instructor
 if (isset($_GET['id']) || isset($_POST['id_instructor'])) {
-    // Obtener el ID del instructor POST
+    // Obtener el ID del instructor 
     $id_instructor = isset($_GET['id']) ? $_GET['id'] : $_POST['id_instructor'];
-
     // Obtener los datos actuales
-    $sql = "SELECT u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
-            FROM instructor i
-            INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
-            INNER JOIN telefono t ON u.id_tel1 = t.id_tel
+    $sql = "SELECT i.id_instructor, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
+    FROM instructor i
+    LEFT JOIN usuario u ON i.id_usuario1 = u.id_usuario
+    LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
             WHERE i.id_instructor = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id_instructor);
@@ -38,8 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Actualizar la información
     $sql_update = "UPDATE usuario u 
-                INNER JOIN instructor i ON u.id_usuario = i.id_usuario1
-                INNER JOIN telefono t ON u.id_tel1 = t.id_tel
+                LEFT JOIN instructor i ON u.id_usuario = i.id_usuario1
+                LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
                 SET u.nom_u = ?, u.paterno_u = ?, u.materno_u = ?, u.email = ?, t.tel = ?
                 WHERE i.id_instructor = ?";
     $stmt_update = $conn->prepare($sql_update);

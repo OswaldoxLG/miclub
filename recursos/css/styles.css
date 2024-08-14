@@ -109,7 +109,7 @@
     align-items: center;
     gap: 15px;
     max-width: 1200px;
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    margin: 0 auto; 
     margin-bottom: 40px;
 
 }
@@ -170,7 +170,7 @@
 }
 @media (max-width: 768px) {
     .articulo {
-        width: 100%; /* Hacer que los artículos ocupen el 100% del ancho en resoluciones bajas */
+        width: 100%; 
     }
 }
 
@@ -525,9 +525,9 @@
 }
 .info_curso_a {
     display: flex;
-    justify-content: space-between; /* Opcional: Espacia las columnas si es necesario */
+    justify-content: space-between; 
     width: 100%;
-    gap: 20px; /* Opcional: Espacio entre las columnas */
+    gap: 20px; 
 }
 .imagenes_cursos{
     flex: 1;
