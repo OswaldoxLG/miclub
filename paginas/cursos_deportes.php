@@ -35,7 +35,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
 
 <div class="centrar_cursos">
     <?php while ($curso = $result_cursos->fetch_assoc()): ?>
-    <div class="contenido_cursos_a">
+    <div class="contenido_cursos_d">
         <div class="info_curso_a">
         <div class="imagenes_cursos">
             <img src="<?php echo BASE_URL . $curso['imagen']; ?>" alt="<?php echo htmlspecialchars($curso['nom_curso']); ?>" class="img_curs_pag">

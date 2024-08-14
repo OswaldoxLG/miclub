@@ -485,11 +485,12 @@
     text-decoration-style: solid;
     text-shadow: 2px 2px 2px 5px red;
 }
-.contenido_cursos{
+.contenido_cursos_d{
     background-color: #ADD02E;
     border-radius: 20px;
-    margin: 20px;
-    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -507,8 +508,9 @@
 .contenido_cursos_c{
     background-color: #1C83AC;
     border-radius: 20px;
-    margin: 20px;
-    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -516,12 +518,22 @@
 .contenido_cursos_s{
     background-color: #F5432B;
     border-radius: 20px;
-    margin: 20px;
-    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+}
+.contenido_cursos_p{
+    background-color: #000;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .info_curso_a {
     display: flex;
@@ -1053,6 +1065,7 @@ body.con-body-form-admincat {
     grid-template-columns: 20% 70%;
     gap:10%;
     padding: 0;
+    margin-bottom: 40px;
 }
 .con_barra_perf{
     display: flex;
@@ -1080,7 +1093,7 @@ body.con-body-form-admincat {
     justify-content: center;
 }
 .con_btn_crear{
-    width: 145px;
+    width: 150px;
     height: 40px;
     background-color: #d8351e;
     padding: 5px;
