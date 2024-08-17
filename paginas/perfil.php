@@ -5,6 +5,7 @@ include_once '../conexion.php';
 
 $id_usuario = $_SESSION['user_id'];
 $usuario_rol = $_SESSION['user_role'];
+$result_cursos = false;
 
 if ($usuario_rol === "Instructor") {
     // Consulta para obtener el ID del instructor
@@ -96,7 +97,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
         <div class="con_txt_info">
             <h1 class="txt_perf">MIS CURSOS</h1>
         </div>
-        <?php if ($result_cursos->num_rows > 0): ?>
+        <?php if ($result_cursos && $result_cursos->num_rows > 0): ?>
             <?php while ($curso = $result_cursos->fetch_assoc()): ?>
             <div class="contenido_cursos_p">
                 <div class="info_curso_a">

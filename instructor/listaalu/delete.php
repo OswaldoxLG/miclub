@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include_once '../../config.php';
 include_once '../../conexion.php';
@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
     $conn->begin_transaction();
 
     try {
-        // Primero, eliminar las relaciones en la tabla `integrante_curso`
+        // Eliminar la relación en la tabla `integrante_curso`
         $sql_delete_courses = "DELETE FROM integrante_curso WHERE id_integrante1 = ?";
         if ($stmt_delete_courses = $conn->prepare($sql_delete_courses)) {
             $stmt_delete_courses->bind_param('i', $id_integrante);
@@ -22,24 +22,13 @@ if (isset($_GET['id'])) {
         } else {
             throw new Exception("Error en la preparación de la consulta para eliminar registros en integrante_curso: " . $conn->error);
         }
-        
-        // Luego, eliminar el registro del integrante
-        $sql_delete_integrante = "DELETE FROM integrante WHERE id_integrante = ?";
-        if ($stmt_delete_integrante = $conn->prepare($sql_delete_integrante)) {
-            $stmt_delete_integrante->bind_param('i', $id_integrante);
-            if ($stmt_delete_integrante->execute()) {
-                // Confirmar la transacción
-                $conn->commit();
-                // Redirigir a la página de lista de alumnos después de la eliminación exitosa
-                header("Location: listaalu.php");
-                exit();
-            } else {
-                throw new Exception("Error al eliminar el registro del integrante: " . $stmt_delete_integrante->error);
-            }
-            $stmt_delete_integrante->close();
-        } else {
-            throw new Exception("Error en la preparación de la consulta para eliminar el registro del integrante: " . $conn->error);
-        }
+
+        // Confirmar la transacción
+        $conn->commit();
+        // Redirigir a la página de lista de alumnos después de la eliminación exitosa
+        header("Location: listaalu.php");
+        exit();
+
     } catch (Exception $e) {
         // Si ocurre un error, deshacer la transacción
         $conn->rollback();
@@ -54,4 +43,5 @@ if (isset($_GET['id'])) {
 
 // Cerrar la conexión
 $conn->close();
+
 ?>
