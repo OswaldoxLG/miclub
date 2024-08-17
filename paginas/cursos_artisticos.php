@@ -43,8 +43,9 @@ include_once BASE_PATH . 'includes/busqueda.php';
                 <p><?php echo htmlspecialchars($curso['descripcion']); ?></p>
 
                 <?php if ($_SESSION['user_role'] == 'Integrante'): ?>
-                    <form action="inscripcion.php" method="POST" class="form_inscripcion">
-                        <input type="hidden" name="curso_id" value="<?php echo $curso['id_curso']; ?>">
+                    <form action="../php/inscripcion.php" method="POST" class="form_inscripcion">
+                        <input type="hidden" name="id_curso" value="<?php echo htmlspecialchars($curso['id_curso']); ?>">
+                        <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">
                         <button type="submit" class="btn_inscripcion">INSCRIBETE</button>
                     </form>
                 <?php endif; ?>

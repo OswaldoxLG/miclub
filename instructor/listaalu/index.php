@@ -1,25 +1,44 @@
 <?php 
+session_start();
 include_once '../../config.php';
 include_once '../../conexion.php';
-
-
+$id_instructor = $_SESSION['user_id'];
+$id_usuario = $_SESSION['user_id'];
+$sql_instructor = "SELECT id_instructor FROM instructor WHERE id_usuario1 = ?";
+if ($stmt_instructor = $conn->prepare($sql_instructor)) {
+    $stmt_instructor->bind_param("i", $id_usuario);
+    $stmt_instructor->execute();
+    $result_instructor = $stmt_instructor->get_result();
+    
+    if ($result_instructor->num_rows > 0) {
+        $row_instructor = $result_instructor->fetch_assoc();
+        $id_instructor = $row_instructor['id_instructor'];
+    } 
+    $stmt_instructor->close();
+} 
 $sql = "SELECT i.id_integrante, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
         FROM integrante i
         INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
-        INNER JOIN telefono t ON u.id_tel1 = t.id_tel";
+        LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
+        INNER JOIN integrante_curso ic ON i.id_integrante = ic.id_integrante1
+        INNER JOIN curso c ON ic.id_curso1 = c.id_curso
+        INNER JOIN instructor_curso icu ON c.id_curso = icu.id_curso1
+        WHERE icu.id_instructor1 = ?";
 
-$result = $conn->query($sql);
+$stmt = $conn->prepare($sql);
 
-if (!$result) {
-    die("Error en la consulta: " . $conn->error);
-}
+
+$stmt->bind_param('i', $id_instructor);
+$stmt->execute();
+
+$result = $stmt->get_result();
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Alumnos</title>
+    <title>Lista de Alumnos</title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>recursos/css/styles.css">
 </head>
@@ -40,12 +59,6 @@ if (!$result) {
                     </aside>
                     <main class="col-md-9 col-lg-10 p-4">
                         <h1 class="text-center mb-4">LISTA DE ALUMNOS</h1>
-                        <div class="d-flex mb-3">
-                            <a href="<?php echo BASE_URL; ?>instructor/newclub/create.php" class="btn btn-success d-flex align-items-center">
-                                <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Alumno" class="me-2" style="width: 24px; height: 24px;">
-                                <span class="text-white">Añadir</span>
-                            </a>
-                        </div>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead class="table-dark">
@@ -56,7 +69,6 @@ if (!$result) {
                                         <th>Apellido Materno</th>
                                         <th>Correo</th>
                                         <th>Teléfono</th> 
-                                        <th>Editar</th>
                                         <th>Eliminar</th>
                                     </tr>
                                 </thead>
@@ -70,13 +82,12 @@ if (!$result) {
                                             echo "<td>" . htmlspecialchars($row['paterno_u']) . "</td>";
                                             echo "<td>" . htmlspecialchars($row['materno_u']) . "</td>";
                                             echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                                            echo "<td>" . htmlspecialchars($row['tel']) . "</td>";
-                                            echo "<td><a href='update.php?id=" . urlencode($row['id_integrante']) . "'><img src='" . BASE_URL . "recursos/img/editar.png' alt='Editar' class='icono-cat' title='Editar Alumno'></a></td>";
+                                            echo "<td>" . htmlspecialchars($row['tel'] ?: 'No disponible') . "</td>";
                                             echo "<td><a href='delete.php?id=" . urlencode($row['id_integrante']) . "' onclick=\"return confirm('¿Estás seguro de que quieres eliminar este alumno?');\"><img src='" . BASE_URL . "recursos/img/borrar.png' alt='Eliminar' class='icono-cat' title='Eliminar Alumno'></a></td>";
                                             echo "</tr>";
                                         }
                                     } else {
-                                        echo "<tr><td colspan='8'>No hay alumnos registrados</td></tr>";
+                                        echo "<tr><td colspan='7'>No hay alumnos registrados</td></tr>";
                                     }
                                 ?>
                                 </tbody>

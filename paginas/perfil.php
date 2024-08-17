@@ -4,26 +4,58 @@ include_once '../config.php';
 include_once '../conexion.php';
 
 $id_usuario = $_SESSION['user_id'];
+$usuario_rol = $_SESSION['user_role'];
 
-$sql_instructor = "SELECT id_instructor FROM instructor WHERE id_usuario1 = ?";
-$stmt_instructor = $conn->prepare($sql_instructor);
-$stmt_instructor->bind_param("i", $id_usuario);
-$stmt_instructor->execute();
-$result_instructor = $stmt_instructor->get_result();
-$instructor = $result_instructor->fetch_assoc();
+if ($usuario_rol === "Instructor") {
+    // Consulta para obtener el ID del instructor
+    $sql_instructor = "SELECT id_instructor FROM instructor WHERE id_usuario1 = ?";
+    $stmt_instructor = $conn->prepare($sql_instructor);
+    $stmt_instructor->bind_param("i", $id_usuario);
+    $stmt_instructor->execute();
+    $result_instructor = $stmt_instructor->get_result();
+    $instructor = $result_instructor->fetch_assoc();
 
-if ($instructor) {
-    $id_instructor = $instructor['id_instructor'];
+    if ($instructor) {
+        $id_instructor = $instructor['id_instructor'];
 
-    $sql_cursos = "
-        SELECT curso.*
-        FROM curso
-        JOIN instructor_curso ON curso.id_curso = instructor_curso.id_curso1
-        WHERE instructor_curso.id_instructor1 = ?";
-    $stmt_cursos = $conn->prepare($sql_cursos);
-    $stmt_cursos->bind_param("i", $id_instructor);
-    $stmt_cursos->execute();
-    $result_cursos = $stmt_cursos->get_result();
+        // Consulta para obtener los cursos del instructor
+        $sql_cursos = "
+            SELECT curso.*
+            FROM curso
+            JOIN instructor_curso ON curso.id_curso = instructor_curso.id_curso1
+            WHERE instructor_curso.id_instructor1 = ?";
+        $stmt_cursos = $conn->prepare($sql_cursos);
+        $stmt_cursos->bind_param("i", $id_instructor);
+        $stmt_cursos->execute();
+        $result_cursos = $stmt_cursos->get_result();
+    } else {
+        $result_cursos = [];
+    }
+} elseif ($usuario_rol === "Integrante") {
+    // Consulta para obtener el ID del integrante
+    $sql_integrante = "SELECT id_integrante FROM integrante WHERE id_usuario1 = ?";
+    $stmt_integrante = $conn->prepare($sql_integrante);
+    $stmt_integrante->bind_param("i", $id_usuario);
+    $stmt_integrante->execute();
+    $result_integrante = $stmt_integrante->get_result();
+    $integrante = $result_integrante->fetch_assoc();
+
+    if ($integrante) {
+        $id_integrante = $integrante['id_integrante'];
+
+        // Consulta para obtener los cursos en los que el integrante está inscrito
+        $sql_cursos_integrante = "
+            SELECT curso.*
+            FROM curso
+            JOIN integrante_curso ON curso.id_curso = integrante_curso.id_curso1
+            WHERE integrante_curso.id_integrante1 = ?";
+        $stmt_cursos_integrante = $conn->prepare($sql_cursos_integrante);
+        $stmt_cursos_integrante->bind_param("i", $id_integrante);
+        $stmt_cursos_integrante->execute();
+        $result_cursos = $stmt_cursos_integrante->get_result();
+    } else {
+        $result_cursos = [];
+    }
 } else {
     $result_cursos = [];
 }
@@ -62,8 +94,8 @@ include_once BASE_PATH . 'includes/busqueda.php';
     </div>
     <div class="centrar_cursos">
         <div class="con_txt_info">
-                <h1 class="txt_perf">MIS CURSOS</h1>
-            </div>
+            <h1 class="txt_perf">MIS CURSOS</h1>
+        </div>
         <?php if ($result_cursos->num_rows > 0): ?>
             <?php while ($curso = $result_cursos->fetch_assoc()): ?>
             <div class="contenido_cursos_p">
@@ -79,7 +111,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
             </div>
             <?php endwhile; ?>
         <?php else: ?>
-            <p>No has creado ningún curso aún.</p>
+            <p>No tienes ningún curso.</p>
         <?php endif; ?>
     </div>
 </div>
