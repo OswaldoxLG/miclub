@@ -34,7 +34,7 @@
                                 <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>admin/panel.php">Panel</a></li>
                             <?php elseif ($_SESSION['user_role'] == 'Instructor'): ?>
                                 <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>paginas/perfil.php">Mi perfil</a></li>
-                            <?php elseif ($_SESSION['user_role'] == 'Alumno'): ?>
+                            <?php elseif ($_SESSION['user_role'] == 'Integrante'): ?>
                                 <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>paginas/perfil.php">Mi perfil</a></li>
                             <?php endif; ?>
                             <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>php/logout.php">Cerrar Sesión</a></li>

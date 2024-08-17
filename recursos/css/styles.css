@@ -567,8 +567,23 @@
     text-decoration: none;
     font-family: Helvetica bold;
 }
-.boton_cursos{
-    background-color: #F5432B;
+.form_inscripcion {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.btn_inscripcion {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn_inscripcion:hover {
+    background-color: #0056b3;
 }
 
 
