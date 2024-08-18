@@ -16,13 +16,13 @@ if ($stmt_instructor = $conn->prepare($sql_instructor)) {
     } 
     $stmt_instructor->close();
 } 
-$sql = "SELECT i.id_integrante, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
+$sql = "SELECT i.id_integrante, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel, c.nom_curso, c.id_curso 
         FROM integrante i
         INNER JOIN usuario u ON i.id_usuario1 = u.id_usuario
         LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
-        INNER JOIN integrante_curso ic ON i.id_integrante = ic.id_integrante1
-        INNER JOIN curso c ON ic.id_curso1 = c.id_curso
-        INNER JOIN instructor_curso icu ON c.id_curso = icu.id_curso1
+        LEFT JOIN integrante_curso ic ON i.id_integrante = ic.id_integrante1
+        LEFT JOIN curso c ON ic.id_curso1 = c.id_curso
+        LEFT JOIN instructor_curso icu ON c.id_curso = icu.id_curso1
         WHERE icu.id_instructor1 = ?";
 
 $stmt = $conn->prepare($sql);
@@ -68,7 +68,8 @@ $result = $stmt->get_result();
                                         <th>Apellido Paterno</th>
                                         <th>Apellido Materno</th>
                                         <th>Correo</th>
-                                        <th>Teléfono</th> 
+                                        <th>Teléfono</th>
+                                        <th>Curso</th> 
                                         <th>Eliminar</th>
                                     </tr>
                                 </thead>
@@ -83,7 +84,8 @@ $result = $stmt->get_result();
                                             echo "<td>" . htmlspecialchars($row['materno_u']) . "</td>";
                                             echo "<td>" . htmlspecialchars($row['email']) . "</td>";
                                             echo "<td>" . htmlspecialchars($row['tel'] ?: 'No disponible') . "</td>";
-                                            echo "<td><a href='delete.php?id=" . urlencode($row['id_integrante']) . "' onclick=\"return confirm('¿Estás seguro de que quieres eliminar este alumno?');\"><img src='" . BASE_URL . "recursos/img/borrar.png' alt='Eliminar' class='icono-cat' title='Eliminar Alumno'></a></td>";
+                                            echo "<td>" . htmlspecialchars($row['nom_curso']) . "</td>";
+                                            echo "<td><a href='delete.php?id_integrante=" . urlencode($row['id_integrante']) . "&id_curso=" . urlencode($row['id_curso']) . "' onclick=\"return confirm('¿Estás seguro de que quieres eliminar este curso para el alumno?');\"><img src='" . BASE_URL . "recursos/img/borrar.png' alt='Eliminar' class='icono-cat' title='Eliminar Curso'></a></td>";
                                             echo "</tr>";
                                         }
                                     } else {
