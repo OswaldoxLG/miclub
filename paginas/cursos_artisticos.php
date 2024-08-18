@@ -3,7 +3,7 @@ session_start();
 include_once '../config.php';
 include_once '../conexion.php';
 
-$sql_categoria = "SELECT id_categoria FROM categoria WHERE categoria = 'Artísticos'";
+$sql_categoria = "SELECT id_categoria FROM categoria WHERE categoria = 'Sociales'";
 $result_categoria = $conn->query($sql_categoria);
 $category_id = $result_categoria->fetch_assoc()['id_categoria'];
 
@@ -31,9 +31,10 @@ $result_cursos = $stmt->get_result();
 include_once BASE_PATH . 'includes/header.php';
 include_once BASE_PATH . 'includes/busqueda.php';
 ?>
+
 <div class="centrar_cursos">
     <?php while ($curso = $result_cursos->fetch_assoc()): ?>
-    <div class="contenido_cursos_a">
+    <div class="contenido_cursos_s">
         <div class="info_curso_a">
             <div class="imagenes_cursos">
                 <img src="<?php echo BASE_URL . $curso['imagen']; ?>" alt="<?php echo htmlspecialchars($curso['nom_curso']); ?>" class="img_curs_pag">
@@ -42,7 +43,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
                 <h3><?php echo htmlspecialchars($curso['nom_curso']); ?></h3>
                 <p><?php echo htmlspecialchars($curso['descripcion']); ?></p>
 
-                <?php if ($_SESSION['user_role'] == 'Integrante'): ?>
+                <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'Integrante'): ?>
                     <form action="../php/inscripcion.php" method="POST" class="form_inscripcion">
                         <input type="hidden" name="id_curso" value="<?php echo htmlspecialchars($curso['id_curso']); ?>">
                         <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">
@@ -54,6 +55,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
     </div>
     <?php endwhile; ?>
 </div>
+
 <?php
 include_once BASE_PATH . 'includes/footer.php';
 ?>

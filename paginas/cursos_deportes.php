@@ -16,7 +16,8 @@ $stmt->bind_param("i", $category_id);
 $stmt->execute();
 $result_cursos = $stmt->get_result();
 
-
+$is_integrante = false;
+$is_integrante = isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'Integrante';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +44,7 @@ include_once BASE_PATH . 'includes/busqueda.php';
                 <h3><?php echo htmlspecialchars($curso['nom_curso']); ?></h3>
                 <p><?php echo htmlspecialchars($curso['descripcion']); ?></p>
 
-                <?php if ($_SESSION['user_role'] == 'Integrante'): ?>
+                <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'Integrante'): ?>
                     <form action="../php/inscripcion.php" method="POST" class="form_inscripcion">
                         <input type="hidden" name="id_curso" value="<?php echo htmlspecialchars($curso['id_curso']); ?>">
                         <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">

@@ -16,7 +16,6 @@ $stmt->bind_param("i", $category_id);
 $stmt->execute();
 $result_cursos = $stmt->get_result();
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
