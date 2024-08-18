@@ -35,6 +35,7 @@ if (!$result) {
                             <a href="/miclub/admin/instructores/index.php" class="nav-link text-light">Instructores</a>
                             <a href="/miclub/admin/alumnos/index.php" class="nav-link text-light">Alumnos</a>
                             <a href="/miclub/admin/roles/index.php" class="nav-link text-light">Roles</a>
+                            <a href="/miclub/admin/direcciones/index.php" class="nav-link text-light">Direcciones</a>
                         </nav>
                     </aside>
                     <main class="col-md-9 col-lg-10 p-4">
