@@ -3,15 +3,14 @@ session_start();
 include_once '../../config.php'; 
 include_once '../../conexion.php';
 
-// Verificar si se ha recibido el ID del instructor
 if (isset($_GET['id']) || isset($_POST['id_instructor'])) {
-    // Obtener el ID del instructor 
+    // Obtener el id del instructor 
     $id_instructor = isset($_GET['id']) ? $_GET['id'] : $_POST['id_instructor'];
-    // Obtener los datos actuales
-    $sql = "SELECT i.id_instructor, u.nom_u, u.paterno_u, u.materno_u, u.email, t.tel 
-    FROM instructor i
-    LEFT JOIN usuario u ON i.id_usuario1 = u.id_usuario
-    LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
+
+    $sql = "SELECT i.id_instructor, u.id_usuario, u.nom_u, u.paterno_u, u.materno_u, u.email, t.id_tel, t.tel 
+            FROM instructor i
+            LEFT JOIN usuario u ON i.id_usuario1 = u.id_usuario
+            LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
             WHERE i.id_instructor = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id_instructor);
@@ -25,7 +24,7 @@ if (isset($_GET['id']) || isset($_POST['id_instructor'])) {
         exit();
     }
 } else {
-    echo "ID de instructor no proporcionado.";
+    echo "id de instructor no proporcionado.";
     exit();
 }
 
@@ -36,23 +35,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];
     $telefono = $_POST['telefono'];
 
-    // Actualizar la información
-    $sql_update = "UPDATE usuario u 
-                LEFT JOIN instructor i ON u.id_usuario = i.id_usuario1
-                LEFT JOIN telefono t ON u.id_tel1 = t.id_tel
-                SET u.nom_u = ?, u.paterno_u = ?, u.materno_u = ?, u.email = ?, t.tel = ?
-                WHERE i.id_instructor = ?";
-    $stmt_update = $conn->prepare($sql_update);
-    $stmt_update->bind_param('sssssi', $nombre, $apellido_paterno, $apellido_materno, $correo, $telefono, $id_instructor);
+    $conn->begin_transaction();
 
-    if ($stmt_update->execute()) {
+    try {
+        if (!empty($row['id_tel'])) {
+            $sql_update_tel = "UPDATE telefono SET tel = ? WHERE id_tel = ?";
+            $stmt_update_tel = $conn->prepare($sql_update_tel);
+            $stmt_update_tel->bind_param('si', $telefono, $row['id_tel']);
+            if ($stmt_update_tel->execute()) {
+                echo "Teléfono actualizado correctamente.<br>";
+            } else {
+                throw new Exception("Error al actualizar el teléfono: " . $stmt_update_tel->error);
+            }
+        } else {
+            $sql_insert_tel = "INSERT INTO telefono (tel) VALUES (?)";
+            $stmt_insert_tel = $conn->prepare($sql_insert_tel);
+            $stmt_insert_tel->bind_param('s', $telefono);
+            if ($stmt_insert_tel->execute()) {
+                $new_tel_id = $conn->insert_id;
+
+                $sql_update_usuario = "UPDATE usuario SET id_tel1 = ? WHERE id_usuario = ?";
+                $stmt_update_usuario = $conn->prepare($sql_update_usuario);
+                $stmt_update_usuario->bind_param('ii', $new_tel_id, $row['id_usuario']);
+                if ($stmt_update_usuario->execute()) {
+                    echo "Usuario actualizado correctamente con nuevo teléfono.<br>";
+                } else {
+                    throw new Exception("Error al actualizar el usuario: " . $stmt_update_usuario->error);
+                }
+            } else {
+                throw new Exception("Error al insertar el teléfono: " . $stmt_insert_tel->error);
+            }
+        }
+
+        $sql_update_usuario = "UPDATE usuario 
+                                SET nom_u = ?, paterno_u = ?, materno_u = ?, email = ? 
+                                WHERE id_usuario = ?";
+        $stmt_update_usuario = $conn->prepare($sql_update_usuario);
+        $stmt_update_usuario->bind_param('ssssi', $nombre, $apellido_paterno, $apellido_materno, $correo, $row['id_usuario']);
+        if ($stmt_update_usuario->execute()) {
+            echo "Información del usuario actualizada correctamente.<br>";
+        } else {
+            throw new Exception("Error al actualizar la información del usuario: " . $stmt_update_usuario->error);
+        }
+
+        $conn->commit();
         header("Location: index.php");
         exit();
-    } else {
-        echo "Error al actualizar el instructor: " . $conn->error;
+    } catch (Exception $e) {
+        $conn->rollback();
+        echo "Error al actualizar el instructor: " . $e->getMessage();
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
