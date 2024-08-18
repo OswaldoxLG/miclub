@@ -38,7 +38,7 @@ include_once BASE_PATH . 'includes/header.php';
                 <img src="<?php echo BASE_URL; ?>recursos/img/instructor.png" alt="imagen instructor" class="img_cat_pan">
             </div>
             <div class="con_info_cat">
-                <a href="<?php echo BASE_URL; ?>admin/instructores/index.php"><strong class="nom_cat_pan">INSTRUCTOR</strong></a>
+                <a href="<?php echo BASE_URL; ?>admin/instructores/index.php"><strong class="nom_cat_pan">INSTRUCTORES</strong></a>
             </div>
         </div>
         <div class="con_cat_pan">
@@ -63,6 +63,22 @@ include_once BASE_PATH . 'includes/header.php';
             </div>
             <div class="con_info_cat">
                 <a href="<?php echo BASE_URL; ?>admin/clubes/index.php"><strong class="nom_cat_pan">CURSOS</strong></a>
+            </div>
+        </div>
+        <div class="con_cat_pan">
+            <div class="con_img_pan">
+                <img src="<?php echo BASE_URL; ?>recursos/img/roles.png" alt="imagen cursos" class="img_cat_pan">
+            </div>
+            <div class="con_info_cat">
+                <a href="<?php echo BASE_URL; ?>admin/roles/index.php"><strong class="nom_cat_pan">ROLES</strong></a>
+            </div>
+        </div>
+        <div class="con_cat_pan">
+            <div class="con_img_pan">
+                <img src="<?php echo BASE_URL; ?>recursos/img/direccion.png" alt="imagen cursos" class="img_cat_pan">
+            </div>
+            <div class="con_info_cat">
+                <a href="<?php echo BASE_URL; ?>admin/direcciones/index.php"><strong class="nom_cat_pan">DIRECCIONES</strong></a>
             </div>
         </div>
     </div>

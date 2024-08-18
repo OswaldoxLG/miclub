@@ -43,7 +43,7 @@ if (!$result) {
                         </nav>
                     </aside>
                     <main class="col-md-9 col-lg-10 p-4">
-                        <h1 class="text-center mb-4">Direcciones</h1>
+                        <h1 class="text-center mb-4">DIRECCIONES</h1>
                         <div class="d-flex mb-3">
                             <a href="<?php echo BASE_URL; ?>admin/direcciones/create.php" class="btn btn-success d-flex align-items-center">
                                 <img src="<?php echo BASE_URL; ?>recursos/img/añadir.png" alt="Añadir Dirección" class="me-2" style="width: 24px; height: 24px;">
