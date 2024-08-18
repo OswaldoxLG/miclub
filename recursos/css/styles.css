@@ -573,7 +573,7 @@
 }
 
 .btn_inscripcion {
-    background-color: #007bff;
+    background-color: #000;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -583,7 +583,7 @@
 }
 
 .btn_inscripcion:hover {
-    background-color: #0056b3;
+    background-color: #868789;
 }
 
 
