@@ -27,7 +27,6 @@ $sql = "SELECT i.id_integrante, u.nom_u, u.paterno_u, u.materno_u, u.email, t.te
 
 $stmt = $conn->prepare($sql);
 
-
 $stmt->bind_param('i', $id_instructor);
 $stmt->execute();
 

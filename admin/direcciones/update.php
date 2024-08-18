@@ -3,11 +3,10 @@ session_start();
 include_once '../../config.php'; 
 include_once '../../conexion.php';
 
-// Verificar si se ha recibido el ID de la dirección
 if (isset($_GET['id']) || isset($_POST['id_direccion'])) {
-    // Obtener el ID de la dirección
+    // Obtener el id de la dirección
     $id_direccion = isset($_GET['id']) ? $_GET['id'] : $_POST['id_direccion'];
-    // Obtener los datos actuales
+    
     $sql = "SELECT d.id_direccion, d.calle, d.numero, d.colonia, d.cp
             FROM direccion d
             WHERE d.id_direccion = ?";
@@ -23,7 +22,7 @@ if (isset($_GET['id']) || isset($_POST['id_direccion'])) {
         exit();
     }
 } else {
-    echo "ID de dirección no proporcionado.";
+    echo "id de dirección no proporcionado.";
     exit();
 }
 
@@ -33,10 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $colonia = $_POST['colonia'];
     $cp = $_POST['cp'];
 
-    // Actualizar la información
     $sql_update = "UPDATE direccion
-                   SET calle = ?, numero = ?, colonia = ?, cp = ?
-                   WHERE id_direccion = ?";
+                SET calle = ?, numero = ?, colonia = ?, cp = ?
+                WHERE id_direccion = ?";
     $stmt_update = $conn->prepare($sql_update);
     $stmt_update->bind_param('sisii', $calle, $numero, $colonia, $cp, $id_direccion);
 

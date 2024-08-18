@@ -8,7 +8,7 @@ $usuario_rol = $_SESSION['user_role'];
 $result_cursos = false;
 
 if ($usuario_rol === "Instructor") {
-    // Consulta para obtener el ID del instructor
+    // obtener id del instructor
     $sql_instructor = "SELECT id_instructor FROM instructor WHERE id_usuario1 = ?";
     $stmt_instructor = $conn->prepare($sql_instructor);
     $stmt_instructor->bind_param("i", $id_usuario);
@@ -19,7 +19,7 @@ if ($usuario_rol === "Instructor") {
     if ($instructor) {
         $id_instructor = $instructor['id_instructor'];
 
-        // Consulta para obtener los cursos del instructor
+        //obtener los cursos del instructor
         $sql_cursos = "
             SELECT curso.*
             FROM curso
@@ -33,7 +33,7 @@ if ($usuario_rol === "Instructor") {
         $result_cursos = [];
     }
 } elseif ($usuario_rol === "Integrante") {
-    // Consulta para obtener el ID del integrante
+    //obtener el id del integrante
     $sql_integrante = "SELECT id_integrante FROM integrante WHERE id_usuario1 = ?";
     $stmt_integrante = $conn->prepare($sql_integrante);
     $stmt_integrante->bind_param("i", $id_usuario);
@@ -44,7 +44,7 @@ if ($usuario_rol === "Instructor") {
     if ($integrante) {
         $id_integrante = $integrante['id_integrante'];
 
-        // Consulta para obtener los cursos en los que el integrante está inscrito
+        // obtener los cursos en los que el integrante está inscrito
         $sql_cursos_integrante = "
             SELECT curso.*
             FROM curso

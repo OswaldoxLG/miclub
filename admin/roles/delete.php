@@ -17,7 +17,6 @@ if (isset($_GET['id'])) {
         $result_check_rol = $stmt_check_rol->get_result();
 
         if ($result_check_rol->num_rows > 0) {
-            // Elimina el rol
             $sql_delete_rol = "DELETE FROM rol WHERE id_rol = ?";
             $stmt_delete_rol = $conn->prepare($sql_delete_rol);
             $stmt_delete_rol->bind_param('i', $id_rol);
@@ -37,6 +36,6 @@ if (isset($_GET['id'])) {
         echo "Error: " . $e->getMessage();
     }
 } else {
-    echo "ID de rol no proporcionado.";
+    echo "id de rol no proporcionado.";
 }
 ?>

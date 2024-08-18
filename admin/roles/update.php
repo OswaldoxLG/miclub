@@ -3,7 +3,6 @@ session_start();
 include_once '../../config.php'; 
 include_once '../../conexion.php';
 
-// Recibe el id del rol
 if (isset($_GET['id']) || isset($_POST['id_rol'])) {
     $id_rol = isset($_GET['id']) ? $_GET['id'] : $_POST['id_rol'];
 
@@ -27,7 +26,6 @@ if (isset($_GET['id']) || isset($_POST['id_rol'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rol = $_POST['rol'];
 
-    // Actualiza la info
     $sql_update = "UPDATE rol SET rol = ? WHERE id_rol = ?";
     $stmt_update = $conn->prepare($sql_update);
     $stmt_update->bind_param('si', $rol, $id_rol);

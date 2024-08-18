@@ -3,7 +3,6 @@ session_start();
 include_once '../../config.php';
 include_once '../../conexion.php';
 
-// Consulta para obtener las direcciones
 $sql = "SELECT d.id_direccion, d.calle, d.numero, d.colonia, d.cp
     FROM direccion d";
 

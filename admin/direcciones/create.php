@@ -4,21 +4,18 @@ include_once '../../config.php';
 include_once '../../conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibir y validar datos del formulario
     $calle = $_POST['calle'];
     $numero = $_POST['numero'];
     $colonia = $_POST['colonia'];
     $cp = $_POST['cp'];
 
-    // Validar que los campos no estén vacíos (puedes agregar más validaciones según sea necesario)
     $sql_direccion = "INSERT INTO direccion (calle, numero, colonia, cp) VALUES (?, ?, ?, ?)";
     $stmt_direccion = $conn->prepare($sql_direccion);
     
     if ($stmt_direccion) {
-        $stmt_direccion->bind_param("sisi", $calle, $numero, $colonia, $cp); // Asegúrate de que 'colonia' es tratado como una cadena
+        $stmt_direccion->bind_param("sisi", $calle, $numero, $colonia, $cp); 
     
             if ($stmt_direccion->execute()) {
-                // Redirigir después de la inserción
                 header("Location: index.php");
                 exit();
             } else {

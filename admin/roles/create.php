@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($stmt_rol->execute()) {
         echo "Rol agregado exitosamente";
-        header("Location: index.php"); // Redirige a la lista de roles
+        header("Location: index.php"); 
         exit();
     } else {
         echo "Error al insertar rol: " . $stmt_rol->error;

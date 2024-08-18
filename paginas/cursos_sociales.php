@@ -44,7 +44,6 @@ include_once BASE_PATH . 'includes/busqueda.php';
                 <p><?php echo htmlspecialchars($curso['descripcion']); ?></p>
 
                 <?php
-                // Verificar si la sesión está iniciada y si el rol de usuario está definido
                 if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'Integrante'): ?>
                     <form action="../php/inscripcion.php" method="POST" class="form_inscripcion">
                         <input type="hidden" name="id_curso" value="<?php echo htmlspecialchars($curso['id_curso']); ?>">

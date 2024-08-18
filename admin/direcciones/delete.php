@@ -9,7 +9,6 @@ if (isset($_GET['id'])) {
     $conn->begin_transaction();
 
     try {
-        // Eliminar la dirección
         $sql_delete_direccion = "DELETE FROM direccion WHERE id_direccion = ?";
         $stmt_delete_direccion = $conn->prepare($sql_delete_direccion);
         $stmt_delete_direccion->bind_param('i', $id_direccion);
@@ -19,13 +18,13 @@ if (isset($_GET['id'])) {
         }
 
         $conn->commit();
-        header("Location: " . BASE_URL . "admin/direcciones/index.php"); // Ajusta la ruta según tu estructura de carpetas
+        header("Location: " . BASE_URL . "admin/direcciones/index.php"); 
         exit();
     } catch (Exception $e) {
         $conn->rollback();
         echo "Error: " . $e->getMessage();
     }
 } else {
-    echo "ID de dirección no proporcionado.";
+    echo "id de dirección no proporcionado.";
 }
 ?>
