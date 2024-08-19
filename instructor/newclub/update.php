@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (in_array($img_file_type, $valid_extensions)) {
             $img_name = uniqid() . '.' . $img_file_type;
-            $img_folder = '../../instructor/img_curso/';
+            $img_folder = '../../instructor/img_cursos/';
             $img_path = $img_folder . $img_name;
 
             if ($curso['imagen'] && file_exists($img_folder . basename($curso['imagen']))) {
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             if (move_uploaded_file($img_tmp_name, $img_path)) {
-                $img_url = 'instructor/img_curso/' . $img_name; 
+                $img_url = 'instructor/img_cursos/' . $img_name; 
             } else {
                 echo "Hubo un problema al subir la imagen.";
                 exit();

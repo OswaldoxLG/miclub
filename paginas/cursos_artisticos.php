@@ -3,7 +3,7 @@ session_start();
 include_once '../config.php';
 include_once '../conexion.php';
 
-$sql_categoria = "SELECT id_categoria FROM categoria WHERE categoria = 'Sociales'";
+$sql_categoria = "SELECT id_categoria FROM categoria WHERE categoria = 'Artísticos'";
 $result_categoria = $conn->query($sql_categoria);
 $category_id = $result_categoria->fetch_assoc()['id_categoria'];
 
